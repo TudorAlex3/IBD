@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census Dataset Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Census Dataset Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <img src="{{ url_for('static', filename='census_outliers_income.png') }}" alt="Census Outliers Income">
+            <img src="{{ url_for('static', filename='census_outliers_marital.status.png') }}" alt="Census Outliers Marital Status">
+            <img src="{{ url_for('static', filename='census_outliers_sex.png') }}" alt="Census Outliers Sex">
+            <img src="{{ url_for('static', filename='census_outliers_workclass.png') }}" alt="Census Outliers Workclass">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis includes pairplots from the Census Dataset, displaying various factors such as income, marital status, sex, and work class, with outliers included. These visualizations help in understanding the relationships between these variables and identifying any unusual patterns or outliers.
+            </p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Income</td>
+                        <td>
+                            The annual income of the individuals. Typically, higher income correlates with other socioeconomic factors.
+                        </td>
+                        <td>
+                            Outliers may reflect extreme income values, potentially highlighting wealth disparities or unusual data entries.
+                        </td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Marital Status</td>
+                        <td>
+                            The marital status of individuals. This is a categorical feature that may be influenced by other factors like age or gender.
+                        </td>
+                        <td>
+                            Outliers could be individuals with unusual marital statuses or data entry anomalies.
+                        </td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Sex</td>
+                        <td>
+                            The gender of the individuals. This is a categorical feature that can impact income and other attributes.
+                        </td>
+                        <td>
+                            Outliers in sex might indicate rare or erroneous data records.
+                        </td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Work Class</td>
+                        <td>
+                            The type of employment the individual is engaged in. It includes categories like private, public, and self-employed.
+                        </td>
+                        <td>
+                            Outliers in work class could suggest data issues, like incorrect categorization of workers.
+                        </td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Key insights regarding the outliers in the Census dataset:</p>
+
+            <ul>
+                <li>
+                    <strong>Income:</strong> Outliers in income may reveal extreme wealth values or errors in income reporting.
+                </li>
+                <li>
+                    <strong>Marital Status:</strong> Outliers could suggest individuals with rare marital statuses or data recording mistakes.
+                </li>
+                <li>
+                    <strong>Sex:</strong> Outliers may indicate issues like missing or incorrect sex data.
+                </li>
+                <li>
+                    <strong>Work Class:</strong> Outliers might represent workers in incorrect categories or unusual employment statuses.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

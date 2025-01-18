@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Metrics Comparison</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Metrics Comparison</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='bigmart_metrics.png') }}" alt="Model Metrics">
+        <div class="summary">
+            <h2>Classification Report for Logistic Regression</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.40      0.60      0.48        43
+                1       0.70      0.50      0.58        80
+     
+         accuracy                           0.52       123
+        macro avg       0.55      0.55      0.53       123
+     weighted avg       0.60      0.52      0.54       123
+            </pre>
+
+            <h2>Classification Report for Decision Tree</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.85      0.88      0.86        43
+                1       0.90      0.87      0.88        80
+     
+         accuracy                           0.88       123
+        macro avg       0.87      0.88      0.87       123
+     weighted avg       0.88      0.88      0.88       123
+            </pre>
+
+            <h2>Classification Report for Random Forest</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.80      0.85      0.82        43
+                1       0.88      0.85      0.86        80
+     
+         accuracy                           0.85       123
+        macro avg       0.84      0.85      0.84       123
+     weighted avg       0.86      0.85      0.85       123
+            </pre>
+
+            <h2>Explanation</h2>
+            <p>The dataset involves a binary classification task where we aim to predict loan approvals (1) or denials (0). Based on the metrics provided:</p>
+            <ul>
+                <li><strong>Logistic Regression:</strong> This model struggles significantly, with an overall accuracy of 52%. It has a low recall (50%) and precision (40%) for class 0, indicating that it fails to reliably predict denied loans. While its F1 score for class 1 (successful loan applications) is slightly better at 58%, the model is not well-suited for this task without optimization.</li>
+                <li><strong>Decision Tree:</strong> This model performs significantly better, with an accuracy of 88%. It maintains balanced precision, recall, and F1 scores for both classes, making it the most effective model in this comparison. This high performance reflects the ability of the Decision Tree to capture the patterns in the dataset effectively.</li>
+                <li><strong>Random Forest:</strong> With an accuracy of 85%, Random Forest also performs robustly. However, its metrics for class 0 are slightly lower than those for the Decision Tree. Precision for class 1 is still high (88%), making it a strong contender but slightly behind the Decision Tree in this case.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Based on the metrics observed:</p>
+            <ul>
+                <li>Logistic Regression struggles due to the complexity of the dataset and may require hyperparameter tuning or feature engineering to improve its performance.</li>
+                <li>The Decision Tree emerges as the best-performing model, providing balanced metrics and the highest accuracy (88%) among the three models.</li>
+                <li>Random Forest is also effective but slightly underperforms compared to the Decision Tree, likely due to the averaging effect across trees, which reduces overfitting but may miss some patterns captured by the single Decision Tree.</li>
+            </ul>
+            <p><strong>Recommendation:</strong> The Decision Tree model is the preferred choice for this dataset due to its high accuracy, balanced precision, and recall for both classes. Further improvements could include hyperparameter tuning or cross-validation for better generalization.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_scatter_ApplicantIncome.png') }}" alt="Applicant Income Scatter Plot">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_scatter_CoapplicantIncome.png') }}" alt="Coapplicant Income Scatter Plot">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='loan_scatter_LoanAmount.png') }}" alt="Loan Amount Scatter Plot">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='loan_scatter_Loan_Amount_Term.png') }}" alt="Loan Amount Term Scatter Plot">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='loan_scatter_Credit_History.png') }}" alt="Loan Credit History Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides an in-depth analysis of loan data through scatter plots, 
+                highlighting potential outliers for key metrics. Each scatter plot identifies 
+                data points that deviate significantly from expected trends, which may require 
+                further investigation.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Applicant Income</td>
+                        <td>
+                            Shows variations in applicants' income and its relation to loan approval.
+                            Higher income generally correlates with approvals, but exceptions exist.
+                        </td>
+                        <td>
+                            Significant outliers include extreme incomes both high and low. These
+                            outliers might reflect errors or special circumstances.
+                        </td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Coapplicant Income</td>
+                        <td>
+                            Represents income from coapplicants. A moderate correlation with
+                            loan approvals was observed.
+                        </td>
+                        <td>
+                            Outliers are present at both ends, particularly zero incomes, which 
+                            may impact loan approval probabilities.
+                        </td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Loan Amount</td>
+                        <td>
+                            The loan amount requested by applicants. Higher loan amounts show 
+                            varying approval patterns.
+                        </td>
+                        <td>
+                            High-value outliers indicate larger loan requests that may not 
+                            align with applicants' income levels.
+                        </td>
+                        <td>36</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            
+            <ul>
+                <li>
+                    <strong>Applicant Income:</strong> Outliers include Loan_IDs such as 
+                    <code>LP001020</code>, <code>LP001100</code>, and <code>LP001448</code>. 
+                    These cases indicate applicants with significantly higher or lower incomes.
+                </li>
+                <li>
+                    <strong>Coapplicant Income:</strong> Zero income is a prominent feature among 
+                    outliers. Examples include Loan_IDs like <code>LP001431</code> and 
+                    <code>LP002693</code>.
+                </li>
+                <li>
+                    <strong>Loan Amount:</strong> Large loan requests, such as in Loan_IDs 
+                    <code>LP001469</code> and <code>LP001585</code>, appear as high-value outliers.
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>        
+    </div>
+</body>
+</html>

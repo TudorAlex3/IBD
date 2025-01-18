@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Sound Classification Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Urban Sound Classification Dataset</h1>
+    </header>
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='UrbanSound8K.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <main>
+        <p>
+            The <strong>Urban Sound Classification Dataset</strong> is part of the 
+            <em>UrbanSound8K</em> dataset. It is used for machine learning tasks 
+            such as audio classification and urban sound recognition. The dataset 
+            provides metadata in a CSV file named <code>UrbanSound8K.csv</code>, 
+            containing the following columns:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>slice_file_name</code></td>
+                    <td>Name of the audio file slice, including the .wav extension.</td>
+                    <td>100032-3-0-0.wav</td>
+                </tr>
+                <tr>
+                    <td><code>fsID</code></td>
+                    <td>Unique identifier for the Freesound.org recording.</td>
+                    <td>100032</td>
+                </tr>
+                <tr>
+                    <td><code>start</code></td>
+                    <td>Start time (in seconds) of the audio slice.</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td><code>end</code></td>
+                    <td>End time (in seconds) of the audio slice.</td>
+                    <td>0.317551</td>
+                </tr>
+                <tr>
+                    <td><code>salience</code></td>
+                    <td>Foreground (1) or background (2) sound indicator.</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><code>fold</code></td>
+                    <td>Cross-validation fold (1-10) for reproducible experiments.</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td><code>classID</code></td>
+                    <td>Numeric identifier for the sound class.</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><code>class</code></td>
+                    <td>Sound class label.</td>
+                    <td>dog_bark</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            This dataset is useful for training machine learning models to recognize 
+            sounds such as <em>dog barks</em>, <em>car horns</em>, and <em>children playing</em> 
+            in urban environments.
+        </p>
+    </main>
+    <footer>
+        <p>Urban Sound Classification Dataset © 2024</p>
+    </footer>
+</body>
+</html>

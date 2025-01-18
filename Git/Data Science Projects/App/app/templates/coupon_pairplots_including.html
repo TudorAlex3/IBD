@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Purchase Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coupon Purchase Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for COUPON_UPC vs PRODUCT_ID -->
+            <img src="{{ url_for('static', filename='cupon_outliers_CAMPAIGN.png') }}" alt="COUPON_UPC and PRODUCT_ID Pairplot">
+            
+           
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis focuses on the relationships between key attributes in the Coupon Purchase dataset using pairplots. These visualizations highlight the interactions between different variables, while outliers are retained to provide deeper insights into unusual or exceptional cases. Understanding these outliers helps in identifying rare patterns or discrepancies in coupon-related purchases.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COUPON_UPC</td>
+                        <td>
+                            Unique identifier for each coupon purchase.
+                        </td>
+                        <td>
+                            Pairplots show interactions between coupon usage and associated product IDs, with outliers revealing unusual patterns or spikes in specific coupon-product combinations.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>PRODUCT_ID</td>
+                        <td>
+                            Unique product identifier linked to coupon usage.
+                        </td>
+                        <td>
+                            Pairplots highlight anomalies in product-specific coupon redemption rates, showing outliers that reflect campaigns with disproportionately high engagement.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>CAMPAIGN</td>
+                        <td>
+                            Identifier for the marketing campaign associated with the coupon.
+                        </td>
+                        <td>
+                            Pairplots provide insights into campaign-based coupon distribution, with outliers illustrating exceptional engagement levels in certain campaigns.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Key findings based on the pairplots include the following:</p>
+            
+            <ul>
+                <li>
+                    <strong>COUPON_UPC:</strong> Outliers reveal rare combinations of coupon usage and specific products, highlighting unique promotional successes or errors in data recording.
+                </li>
+                <li>
+                    <strong>PRODUCT_ID:</strong> Some product IDs show unusually high engagement rates in specific coupon campaigns, leading to clear outliers in pairplot analyses.
+                </li>
+                <li>
+                    <strong>CAMPAIGN:</strong> Outliers represent marketing campaigns with higher-than-average coupon engagement, which can provide insights into effective promotional strategies.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

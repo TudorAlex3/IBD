@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_outliers_application.png') }}" alt="Application Outliers Included">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_outliers_coapplicant.png') }}" alt="Coapplicant Outliers Included">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='loan_outliers_dependents.png') }}" alt="Loan Dependents Outliers Included">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='loan_outliers_education.png') }}" alt="Loan Education Outliers Included">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='loan_outliers_gender.png') }}" alt="Loan Gender Outliers Included">
+            <img src="{{ url_for('static', filename='loan_outliers_married.png') }}" alt="Loan Married Outliers Included">
+            <img src="{{ url_for('static', filename='loan_outliers_self_employed.png') }}" alt="Loan Self Employed Outliers Included">
+        </div>
+        
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis provides a detailed summary of the data, focusing on key metrics and identifying outliers that might affect the interpretation of the results. Outliers are data points that deviate significantly from the general pattern and can sometimes skew the analysis. We have highlighted outliers in three key metrics: Applicant Income, Coapplicant Income, and Loan Amount.
+            </p>
+        
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Applicant Income</td>
+                        <td>
+                            Represents the income of the primary applicant. Higher incomes generally correlate with higher chances of loan approval.
+                        </td>
+                        <td>
+                            The scatter plot indicates significant outliers, especially at the higher end. These could represent very high-income individuals whose data may warrant further review.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Coapplicant Income</td>
+                        <td>
+                            The income of the coapplicant, if present. In some cases, a higher coapplicant income can increase the likelihood of loan approval.
+                        </td>
+                        <td>
+                            Several data points show very low or zero income for coapplicants. These instances may suggest either data entry errors or cases with no coapplicant.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Loan Amount</td>
+                        <td>
+                            The total loan amount requested by the applicant. Higher loan amounts may have different approval rates depending on the applicant's financial profile.
+                        </td>
+                        <td>
+                            There are several outliers, particularly those with extremely high loan requests. These could be indicative of either special cases or potential errors in the data.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+        
+            <ul>
+                <li>
+                    <strong>Applicant Income:</strong> Outliers include Loan_IDs such as <code>LP001020</code>, <code>LP001100</code>, and <code>LP001448</code>. These cases represent applicants with significantly higher incomes compared to the average.
+                </li>
+                <li>
+                    <strong>Coapplicant Income:</strong> Outliers with zero income are prominent in this metric. For example, <code>LP001431</code> and <code>LP002693</code> are cases where no coapplicant income is recorded.
+                </li>
+                <li>
+                    <strong>Loan Amount:</strong> High-value outliers are present in the data, including Loan_IDs like <code>LP001469</code> and <code>LP001585</code>, which represent applicants requesting much larger loans than the average.
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip History Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trip History Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plots -->
+            <img src="{{ url_for('static', filename='trip_scatter_Duration.png') }}" alt="Scatter Plot of Trip Duration">
+            <img src="{{ url_for('static', filename='trip_scatter_End station number.png') }}" alt="Scatter Plot of End Station Number">
+            <img src="{{ url_for('static', filename='trip_scatter_Start station number.png') }}" alt="Scatter Plot of Start Station Number">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report presents insights derived from scatter plots of the **Trip History Dataset**. The analysis highlights relationships between key variables, potential clustering patterns, and the presence of outliers.
+            </p>
+
+            <h3>Key Observations</h3>
+            <ul>
+                <li>
+                    <strong>Trip Duration:</strong> The scatter plot reveals a wide spread of trip durations, with most trips clustering around shorter durations (less than 30 minutes). Outliers indicate unusually long trips, possibly due to errors or specific use cases.
+                </li>
+                <li>
+                    <strong>End Station Number:</strong> The end station numbers show distinct clustering, suggesting popular end stations are frequently used. A few scattered points indicate rare or unusual trip destinations.
+                </li>
+                <li>
+                    <strong>Start Station Number:</strong> Similar to the end station pattern, start station numbers show clusters at popular stations, with outliers representing infrequently used starting locations.
+                </li>
+            </ul>
+
+            <h3>Outlier Analysis</h3>
+            <p>Outliers in the dataset offer critical insights into unusual patterns:</p>
+            <ul>
+                <li>
+                    <strong>Trip Duration:</strong> Outliers in the long-duration range could indicate data entry errors, unique trip conditions, or special events.
+                </li>
+                <li>
+                    <strong>End Station Number:</strong> Uncommon end stations might represent exploratory trips, maintenance movements, or station-specific issues.
+                </li>
+                <li>
+                    <strong>Start Station Number:</strong> Rarely used start stations could indicate geographically isolated or newly introduced stations.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

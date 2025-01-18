@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigmart Sales Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_establishment.png') }}" alt="Application Outliers Included">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_fat.png') }}" alt="Coapplicant Outliers Included">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_identifier.png') }}" alt="Loan Dependents Outliers Included">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_location.png') }}" alt="Loan Education Outliers Included">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_mrp.png') }}" alt="Loan Gender Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_sales.png') }}" alt="Loan Married Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_size.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_type.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_typeoutlet.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_removed_outliers_visibility.png') }}" alt="Loan Self Employed Outliers Included">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Post-Outlier Removal Summary</h2>
+            <p>
+                The removal of outliers has significantly improved the clarity of the dataset, allowing for better visualization of patterns and relationships between variables. The cleaned dataset now presents a more normalized distribution, helping to identify meaningful trends.
+            </p>
+            
+            <h3>Key Insights Post-Outlier Removal</h3>
+            <ul>
+                <li>
+                    <strong>Applicant Income:</strong> 
+                    After removing outliers, the distribution of applicant income appears more centralized, eliminating extreme high-income cases that previously distorted the analysis. The scatter plot now highlights the typical income range for loan applicants, making it easier to observe the relationship with loan approval.
+                </li>
+                <li>
+                    <strong>Coapplicant Income:</strong> 
+                    Cleaning the data removed anomalies such as zero or unrealistically low incomes, resulting in a more balanced dataset. A clearer correlation between coapplicant income and loan approval likelihood is now visible, with fewer cases skewing the results.
+                </li>
+                <li>
+                    <strong>Loan Amount:</strong> 
+                    The cleaned dataset has removed extremely high loan requests that were previously dominating the distribution. Post-outlier removal, loan amounts display a more normal and interpretable range, better reflecting typical loan request behaviors.
+                </li>
+            </ul>
+        
+            <h3>Improved Visual Insights</h3>
+            <ul>
+                <li>
+                    <strong>Applicant Income vs Loan Amount:</strong> 
+                    The scatter plot now shows a smoother trend, where higher-income applicants generally request higher loan amounts. The absence of extreme data points emphasizes typical borrowing behavior.
+                </li>
+                <li>
+                    <strong>Coapplicant Income vs Loan Amount:</strong> 
+                    The cleaned dataset reveals a subtler relationship between coapplicant income and loan amount, particularly for applicants with coapplicants who contribute significantly to the household income.
+                </li>
+                <li>
+                    <strong>Loan Amount Distribution:</strong> 
+                    The histogram of loan amounts is more symmetrical, highlighting the common range for loan requests while reducing the influence of outliers.
+                </li>
+            </ul>
+        
+            <p>
+                Removing outliers has not only improved the quality of visualizations but also laid a stronger foundation for predictive modeling and data analysis. By focusing on the majority of the data points and reducing the noise caused by extreme values, the dataset now offers more reliable insights.
+            </p>
+        </div>
+        
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+            
+    </div>
+</body>
+</html>

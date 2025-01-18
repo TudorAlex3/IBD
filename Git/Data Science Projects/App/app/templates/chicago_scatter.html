@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Crime Dataset Scatter Plot Analysis</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chicago Crime Dataset Scatter Plot Analysis</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Crime Dataset Scatter Plots -->
+            <img src="{{ url_for('static', filename='chicago_scatter_ID.png') }}" alt="Chicago Crime Scatter Plot - ID vs Latitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_Latitude.png') }}" alt="Chicago Crime Scatter Plot - ID vs Longitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_Longitude.png') }}" alt="Chicago Crime Scatter Plot - Year vs Latitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_Unnamed.png') }}" alt="Chicago Crime Scatter Plot - Year vs Longitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_X.png') }}" alt="Chicago Crime Scatter Plot - Year vs Longitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_Y.png') }}" alt="Chicago Crime Scatter Plot - Year vs Longitude">
+            <img src="{{ url_for('static', filename='chicago_scatter_Year.png') }}" alt="Chicago Crime Scatter Plot - Year vs Longitude">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This scatter plot analysis focuses on key numerical columns from the Chicago Crime dataset. The analysis examines the relationships between geographical coordinates and crime data across different years.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Latitude</td>
+                        <td>
+                            Represents the geographical latitude of crime incidents.
+                        </td>
+                        <td>
+                            The scatter plot reveals the distribution of crimes across different parts of Chicago, with noticeable hot spots and clusters.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td>
+                        <td>
+                            Represents the geographical longitude of crime incidents.
+                        </td>
+                        <td>
+                            A similar pattern is seen in longitude, showing clusters of crimes around central areas and outliers in suburban regions.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>
+                            Indicates the year when the crime incidents were recorded.
+                        </td>
+                        <td>
+                            Over time, trends show changes in crime distribution, with noticeable spikes or dips depending on the year.
+                        </td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            A unique identifier for crime records.
+                        </td>
+                        <td>
+                            The scatter plot showcases the distribution of crimes using unique IDs, highlighting distinct crime patterns and clusters.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Key insights from the scatter plots include:</p>
+            
+            <ul>
+                <li>
+                    <strong>Latitude:</strong> Clusters around central Chicago indicate high crime areas, while outliers in suburban regions signify isolated incidents.
+                </li>
+                <li>
+                    <strong>Longitude:</strong> Similar to latitude, clusters around the central area and notable outliers in suburban or less densely populated areas are observed.
+                </li>
+                <li>
+                    <strong>Year:</strong> Trends show how crime distributions shift over the years, with certain years having distinct patterns in crime locations.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

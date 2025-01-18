@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histograms for Numerical Columns</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Histograms for Numerical Columns</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='census_histograms.png') }}" alt="Histograms of Census Income Dataset">
+        <div class="summary">
+            <h2>Data Summary</h2>
+            <p><strong>Dataset Information:</strong> The Census Income dataset includes demographic and work-related information, focusing on predicting income levels:</p>
+            <ul>
+                <li><strong>Age:</strong> Numerical, age of the individual</li>
+                <li><strong>Education.num:</strong> Numerical, years of education completed</li>
+                <li><strong>Capital.gain:</strong> Numerical, capital gains</li>
+                <li><strong>Capital.loss:</strong> Numerical, capital losses</li>
+                <li><strong>Hours.per.week:</strong> Numerical, hours worked per week</li>
+            </ul>
+            <h2>Data Description</h2>
+            <pre>
+                count          mean       std        min         25%       50%       75%        max
+Age               32,561   38.58     13.64    17.0       28.0      37.0      48.0       90.0
+Education.num     32,561   10.08      2.57     1.0        9.0      10.0      13.0       16.0
+Capital.gain      32,561   1077.65  7385.29    0.0        0.0       0.0       0.0     99,999.0
+Capital.loss      32,561   87.30     402.96    0.0        0.0       0.0       0.0      4,356.0
+Hours.per.week    32,561   40.44     12.35     1.0       40.0      40.0      45.0       99.0
+            </pre>
+            <h2>Explanation of Histograms</h2>
+            <p>The histograms display the distribution of numerical features in the dataset. Key observations:</p>
+            <ul>
+                <li><strong>Age:</strong> The age distribution is right-skewed, with most individuals falling between 25 and 50 years old.</li>
+                <li><strong>Education.num:</strong> Education years tend to cluster around 9–13, corresponding to high school and some college education.</li>
+                <li><strong>Capital.gain:</strong> The distribution is highly skewed, with a majority of entries being zero and a few extreme outliers.</li>
+                <li><strong>Capital.loss:</strong> Similar to capital.gain, most values are zero, with occasional spikes in higher ranges.</li>
+                <li><strong>Hours.per.week:</strong> Most individuals work standard full-time hours, clustering around 40, with a slight tail for higher working hours.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

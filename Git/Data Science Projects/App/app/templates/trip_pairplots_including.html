@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Dataset Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trip Dataset Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <img src="{{ url_for('static', filename='trip_outliers_member.png') }}" alt="Trip Outliers Included">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis presents pairplots from the Trip Dataset, including outliers. The outliers are included to reveal unique patterns and potential anomalies in the data. The visualizations help us identify trends and areas where data preprocessing might be necessary.
+            </p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Trip Duration</td>
+                        <td>
+                            Duration of trips in minutes. The longer the trip, the higher the fare in general.
+                        </td>
+                        <td>
+                            Outliers in duration may reflect unusually long trips due to specific travel patterns or data entry errors.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Fare</td>
+                        <td>
+                            The amount charged for the trip. This typically correlates with the trip duration and distance.
+                        </td>
+                        <td>
+                            Outliers in fare values suggest extreme variations in charges, which could be due to data entry issues or unusual trip patterns.
+                        </td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Distance</td>
+                        <td>
+                            The distance covered during the trip. Long-distance trips tend to result in higher fares.
+                        </td>
+                        <td>
+                            Outliers in distance could indicate unusual or exceptionally long trips, possibly due to route inefficiencies.
+                        </td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Passenger Count</td>
+                        <td>
+                            The number of passengers on the trip. Larger trips typically have higher passenger counts.
+                        </td>
+                        <td>
+                            Outliers could indicate very high or low passenger numbers, suggesting potential data entry issues or rare trip situations.
+                        </td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some key observations about the outliers:</p>
+
+            <ul>
+                <li>
+                    <strong>Trip Duration:</strong> Outliers with extremely long trip durations may indicate either data errors or exceptionally long trips, such as cross-city journeys.
+                </li>
+                <li>
+                    <strong>Fare:</strong> High fare outliers could signify premium trips or errors in fare entry.
+                </li>
+                <li>
+                    <strong>Distance:</strong> Outliers with unusually long distances may point to inefficient routes or data entry issues.
+                </li>
+                <li>
+                    <strong>Passenger Count:</strong> Outliers in the passenger count might reflect either rare trips or potential data recording problems.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

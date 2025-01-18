@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Analysis: Count Column Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Series Analysis: Count Column Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for Count -->
+            <img src="{{ url_for('static', filename='time_scatter_Count.png') }}" alt="Count Column Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides a detailed analysis of the Time Series dataset focusing on the 
+                `Count` column. Outliers in the data are highlighted, which can provide insights into 
+                unusual trends or errors in the dataset over time.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Count</td>
+                        <td>
+                            Represents the number of events or occurrences recorded over time.
+                        </td>
+                        <td>
+                            Some periods exhibit unusually high or low counts, possibly indicating 
+                            anomalies such as system failures, errors in data entry, or exceptional events.
+                        </td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plot:</p>
+            <ul>
+                <li>
+                    <strong>Count:</strong> Outliers include spikes in the `Count` during specific time periods, 
+                    which may indicate anomalies such as sudden surges in activity, system anomalies, or data recording errors.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

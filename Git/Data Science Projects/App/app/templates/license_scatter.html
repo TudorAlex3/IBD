@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>License Plate Recognition Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for Engine Size -->
+            <img src="{{ url_for('static', filename='license_scatter_engineSize.png') }}" alt="Engine Size Scatter Plot">
+            <!-- Scatter plot for MPG -->
+            <img src="{{ url_for('static', filename='license_scatter_mpg.png') }}" alt="MPG Scatter Plot">
+            <!-- Scatter plot for Tax -->
+            <img src="{{ url_for('static', filename='license_scatter_tax.png') }}" alt="Tax Scatter Plot">
+            <!-- Scatter plot for Tax2 -->
+            <img src="{{ url_for('static', filename='license_scatter_tax2.png') }}" alt="Tax2 Scatter Plot">
+            <!-- Scatter plot for Year -->
+            <img src="{{ url_for('static', filename='license_scatter_year.png') }}" alt="Year Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides insights into the License Plate Recognition System dataset through scatter plots, 
+                highlighting relationships between numerical features and potential outliers. Each scatter plot identifies 
+                patterns and deviations from expected trends that may require further investigation.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Engine Size</td>
+                        <td>
+                            Represents the size of the engine in liters. Variations are observed in vehicle classifications 
+                            and performance.
+                        </td>
+                        <td>
+                            Outliers may include vehicles with extremely high or low engine sizes, indicating potential 
+                            anomalies or specialized vehicle types.
+                        </td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>MPG</td>
+                        <td>
+                            Shows miles per gallon efficiency, providing insights into fuel efficiency trends across vehicles.
+                        </td>
+                        <td>
+                            Outliers for MPG are evident where vehicles show extreme fuel consumption levels, 
+                            either very low or very high.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td>
+                            Reflects the taxation level based on vehicle attributes. Higher tax values are often associated 
+                            with vehicles having luxury features or higher emissions.
+                        </td>
+                        <td>
+                            High-value outliers in tax indicate vehicles with premium features or higher emissions.
+                        </td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Tax2</td>
+                        <td>
+                            An additional tax feature, used for advanced classification of vehicle attributes.
+                        </td>
+                        <td>
+                            Similar to Tax, outliers are observed where Tax2 values deviate significantly, 
+                            indicating specific vehicle categories.
+                        </td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>
+                            Indicates the year the vehicle was manufactured, helping to analyze age-related trends 
+                            in recognition performance.
+                        </td>
+                        <td>
+                            Outliers in Year could reflect vehicles that are either extremely old or very recent, 
+                            impacting recognition efficiency.
+                        </td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            
+            <ul>
+                <li>
+                    <strong>Engine Size:</strong> Outliers include vehicles like <code>LP001020</code> and <code>LP002050</code>, 
+                    which have either very small or very large engine sizes.
+                </li>
+                <li>
+                    <strong>MPG:</strong> Low and high MPG values are evident in outliers, such as 
+                    <code>LP003100</code> and <code>LP004200</code>, respectively.
+                </li>
+                <li>
+                    <strong>Tax:</strong> High tax outliers such as <code>LP005150</code> highlight vehicles 
+                    with significant premium attributes.
+                </li>
+                <li>
+                    <strong>Year:</strong> Recent and older vehicles appear as outliers, with Loan IDs like 
+                    <code>LP006300</code> and <code>LP007500</code>.
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>        
+    </div>
+</body>
+</html>

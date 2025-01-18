@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkiye Student Evaluation Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Turkiye Student Evaluation Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='turkiye_outliers_class.png') }}" alt="Application Outliers Included">
+            
+        </div>
+        
+
+        <!-- Summary Section -->
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis explores patterns in the **Turkiye Student Evaluation Dataset**, with a focus on the **Class** column, which represents the grouping or category of students. Outliers have been identified and retained for the **Class** column to better understand deviations and unique patterns within the dataset. These outliers could provide insights into potential anomalies or distinctions among groups.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class</td>
+                        <td>
+                            Represents the grouping or category of students, potentially based on attributes such as performance or evaluation scores.
+                        </td>
+                        <td>
+                            Outliers indicate student groups with significantly higher or lower evaluation scores, which may point to unique teaching strategies or learning environments.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Key findings based on the **Class** column include the following:</p>
+            
+            <ul>
+                <li>
+                    <strong>Class Outliers:</strong> Outliers in the **Class** column include groups with unusually high evaluations (e.g., <code>Class A</code>), which may reflect exceptional teaching methods or student engagement.
+                </li>
+                <li>
+                    Groups with unusually low evaluations (e.g., <code>Class F</code>) may highlight areas needing improvement or challenges in certain educational settings.
+                </li>
+                <li>
+                    Outliers provide critical insights into variations in student performance and satisfaction across different groups.
+                </li>
+            </ul>
+        </div>
+        
+
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

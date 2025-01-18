@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Last Visited Models</title>
+    <style>
+        /* Your styles here */
+        .history-container {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 80%;
+        }
+        .history-container h2 {
+            color: #4CAF50;
+        }
+        .history-item {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .center-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .back-btn {
+            background-color: #4CAF50;
+            padding: 15px 30px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>History of Last Visited Models</h1>
+
+    <div class="history-container">
+        <h2>Last Visited:</h2>
+        <div class="history-item">
+            <p><strong>Difficulty Level:</strong> <span id="difficultyLevel">Loading...</span></p>
+            <p><strong>Model Name:</strong> <span id="modelName">Loading...</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve difficulty and model name from localStorage
+        window.onload = function() {
+            const difficulty = localStorage.getItem('difficulty') || 'No difficulty selected.';
+            const modelName = localStorage.getItem('lastVisitedModel') || 'No model visited yet.';
+
+            // Display the retrieved values
+            document.getElementById('difficultyLevel').textContent = difficulty;
+            document.getElementById('modelName').textContent = modelName;
+        };
+    </script>
+    <div class="center-button-container">
+        <button class="back-btn" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+</body>
+</html>

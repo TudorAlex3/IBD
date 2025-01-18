@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Evaluation Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wine Quality Evaluation Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for various wine quality factors -->
+            <img src="{{ url_for('static', filename='wine_scatter_alcohol.png') }}" alt="Scatter Plot of Alcohol">
+            <img src="{{ url_for('static', filename='wine_scatter_chlorides.png') }}" alt="Scatter Plot of Chlorides">
+            <img src="{{ url_for('static', filename='wine_scatter_citric acid.png') }}" alt="Scatter Plot of Citric Acid">
+            <img src="{{ url_for('static', filename='wine_scatter_density.png') }}" alt="Scatter Plot of Density">
+            <img src="{{ url_for('static', filename='wine_scatter_fixed acidity.png') }}" alt="Scatter Plot of Fixed Acidity">
+            <img src="{{ url_for('static', filename='wine_scatter_free sulfur dioxide.png') }}" alt="Scatter Plot of Free Sulfur Dioxide">
+            <img src="{{ url_for('static', filename='wine_scatter_pH.png') }}" alt="Scatter Plot of pH">
+            <img src="{{ url_for('static', filename='wine_scatter_quality.png') }}" alt="Scatter Plot of Quality">
+            <img src="{{ url_for('static', filename='wine_scatter_residual sugar.png') }}" alt="Scatter Plot of Residual Sugar">
+            <img src="{{ url_for('static', filename='wine_scatter_sulphates.png') }}" alt="Scatter Plot of Sulphates">
+            <img src="{{ url_for('static', filename='wine_scatter_total sulfur dioxide.png') }}" alt="Scatter Plot of Total Sulfur Dioxide">
+            <img src="{{ url_for('static', filename='wine_scatter_volatile acidity.png') }}" alt="Scatter Plot of Volatile Acidity">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides a detailed analysis of the wine quality dataset, using scatter plots to examine 
+                various factors and their relationships with wine quality. Outliers have been highlighted to provide insight 
+                into unusual trends or data points.
+            </p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alcohol</td>
+                        <td>Represents the alcohol content of the wine. Higher values generally correlate with better quality.</td>
+                        <td>Outliers include wines with extremely low or high alcohol content, which may affect the taste and overall quality.</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Chlorides</td>
+                        <td>Measures the chloride content in the wine, which can affect flavor and quality.</td>
+                        <td>Outliers show wines with unusually high chloride levels, possibly indicating excessive salt or errors in measurement.</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Citric Acid</td>
+                        <td>Indicates the presence of citric acid, contributing to the flavor profile of the wine.</td>
+                        <td>Outliers show wines with extremely high or low citric acid levels, which could be due to fermentation variations.</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Density</td>
+                        <td>Represents the density of the wine, often related to alcohol and sugar content.</td>
+                        <td>Outliers show wines with unusually high density, which could be linked to high residual sugar or other anomalies.</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Fixed Acidity</td>
+                        <td>Measures the fixed acids in wine, influencing its taste and tartness.</td>
+                        <td>Outliers indicate wines with extreme acidity levels, possibly linked to unusual fermentation processes.</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            
+            <ul>
+                <li>
+                    <strong>Alcohol:</strong> Wines with very low alcohol content (below 7%) and high alcohol content (above 15%) appear as outliers, 
+                    which could be attributed to either mistakes in data entry or wines with distinct characteristics.
+                </li>
+                <li>
+                    <strong>Chlorides:</strong> Some wines show extremely high chloride levels, suggesting a potential error in measurement or a specific 
+                    winemaking process that causes unusual chloride levels.
+                </li>
+                <li>
+                    <strong>Citric Acid:</strong> Wines with very high citric acid levels appear as outliers, which may indicate unique fermentation conditions.
+                </li>
+                <li>
+                    <strong>Density:</strong> Some wines have abnormally high densities, possibly linked to higher residual sugars or high alcohol content.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

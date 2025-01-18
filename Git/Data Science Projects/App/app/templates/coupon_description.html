@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Purchase Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coupon Purchase Dataset Description</h1>
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='coupon.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Coupon Purchase dataset contains information about coupon purchases, including details such as Coupon UPC, Product ID, and Campaign ID. This dataset can be utilized for analysis of purchasing behaviors, campaign effectiveness, and trends in coupon usage.</p>
+
+            <h2>Sample Data (First 5 Entries)</h2>
+            <pre>
+COUPON_UPC,PRODUCT_ID,CAMPAIGN
+10000089061,27160,4
+10000089064,27754,9
+10000089073,28897,12
+51800009050,28919,28
+52100000076,28929,25
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>COUPON_UPC</strong>: Unique identifier for the coupon.</li>
+                <li><strong>PRODUCT_ID</strong>: Unique identifier for the product associated with the coupon.</li>
+                <li><strong>CAMPAIGN</strong>: Identifier for the marketing campaign linked to the coupon.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset is commonly used for marketing analysis, understanding consumer purchasing behavior, and optimizing promotional strategies through detailed analysis of coupon usage and its impact on sales and campaign performance.</p>
+        </div>
+    </div>
+</body>
+</html>

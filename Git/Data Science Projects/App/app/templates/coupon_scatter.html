@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Purchase Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coupon Purchase Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for COUPON_UPC -->
+            <img src="{{ url_for('static', filename='cupon_scatter_CAMPAIGN.png') }}" alt="COUPON_UPC Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides a detailed analysis of the Coupon Purchase dataset using scatter plots, 
+                focusing on key numerical variables and their relationships. Outliers in the data are 
+                highlighted, which can provide insights into unusual trends or errors in the dataset.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COUPON_UPC</td>
+                        <td>
+                            Unique identifier for each coupon purchase.
+                        </td>
+                        <td>
+                            Some regions have significantly high frequencies of coupon usage, indicating potential outliers where campaigns have been highly successful.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>PRODUCT_ID</td>
+                        <td>
+                            Unique product identifier associated with each coupon purchase.
+                        </td>
+                        <td>
+                            Certain product IDs show higher usage, with occasional spikes representing outliers.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>CAMPAIGN</td>
+                        <td>
+                            Campaign identifier linked to the coupon.
+                        </td>
+                        <td>
+                            Certain campaigns show unusually high engagement, leading to outliers.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            <ul>
+                <li>
+                    <strong>COUPON_UPC:</strong> Outliers are areas with unusually high frequencies of coupon usage, suggesting highly successful promotional campaigns.
+                </li>
+                <li>
+                    <strong>PRODUCT_ID:</strong> Some product IDs exhibit a much higher number of coupon redemptions compared to others, marking them as outliers.
+                </li>
+                <li>
+                    <strong>CAMPAIGN:</strong> Outliers indicate specific campaigns with significantly higher engagement levels, representing anomalies in the dataset.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

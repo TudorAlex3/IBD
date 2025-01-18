@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Black Friday Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='Black_Friday.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Black Friday dataset contains information on customer purchases during a Black Friday sale. It includes demographic details of customers, product details, and purchase amount, allowing for analysis of purchasing behavior and trends.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+<pre>
+User_ID,Product_ID,Gender,Age,Occupation,City_Category,Stay_In_Current_City_Years,Marital_Status,Product_Category_1,
+Product_Category_2,Product_Category_3,Purchase
+1000001,P00069042,F,0-17,10,A,2,0,3,
+,,,,8370
+1000001,P00248942,F,0-17,10,A,2,0,1,6,14,15200
+1000001,P00087842,F,0-17,10,A,2,0,12,
+,,,,1422
+1000001,P00085442,F,0-17,10,A,2,0,12,14,1057
+1000002,P00285442,M,55+,16,C,4+,0,8,
+,,,,7969
+</pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>User_ID</strong>: Unique identifier for each user.</li>
+                <li><strong>Product_ID</strong>: Unique identifier for each product.</li>
+                <li><strong>Gender</strong>: Gender of the user (M/F).</li>
+                <li><strong>Age</strong>: Age group of the user.</li>
+                <li><strong>Occupation</strong>: Occupation code of the user.</li>
+                <li><strong>City_Category</strong>: Category of the city (A, B, C).</li>
+                <li><strong>Stay_In_Current_City_Years</strong>: Number of years the user has stayed in the current city.</li>
+                <li><strong>Marital_Status</strong>: Marital status of the user (0 = Single, 1 = Married).</li>
+                <li><strong>Product_Category_1</strong>: Main product category.</li>
+                <li><strong>Product_Category_2</strong>: Secondary product category (if applicable).</li>
+                <li><strong>Product_Category_3</strong>: Tertiary product category (if applicable).</li>
+                <li><strong>Purchase</strong>: Purchase amount.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The dataset can be used for various analyses, including:</p>
+            <ul>
+                <li>Customer demographics and purchase behavior.</li>
+                <li>Product performance analysis.</li>
+                <li>Segmentation of customers based on purchasing trends.</li>
+                <li>Prediction of purchase amounts using machine learning techniques.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Churn Prediction Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for tenure vs. MonthlyCharges -->
+            <img src="{{ url_for('static', filename='chrun_scatter_SeniorCitizen.png') }}" alt="Tenure vs. MonthlyCharges Scatter Plot">
+            <!-- Scatter plot for MonthlyCharges vs. TotalCharges -->
+           
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary - Senior Citizens</h2>
+            <p>
+                This report analyzes the Churn Prediction dataset, focusing specifically on scatter plots for Senior Citizens. 
+                Key numerical variables and their relationships are explored, highlighting trends and outliers unique to this demographic group.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tenure</td>
+                        <td>
+                            Number of months the senior citizen has stayed with the service provider.
+                        </td>
+                        <td>
+                            Outliers include unusually short or long tenures among Senior Citizens.
+                        </td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>MonthlyCharges</td>
+                        <td>
+                            Monthly payment made by Senior Citizens.
+                        </td>
+                        <td>
+                            Outliers are cases of extremely high or low monthly charges for this group, potentially due to unique service packages.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>TotalCharges</td>
+                        <td>
+                            Total payment made by Senior Citizens over their tenure.
+                        </td>
+                        <td>
+                            Outliers represent inconsistencies between tenure, monthly charges, and total charges, revealing anomalies specific to Senior Citizens.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots for Senior Citizens:</p>
+            <ul>
+                <li>
+                    <strong>Tenure:</strong> Senior Citizens with unusually short or long tenures suggest patterns of quick churn or loyalty within this group.
+                </li>
+                <li>
+                    <strong>MonthlyCharges:</strong> Outliers show cases where Senior Citizens pay significantly higher or lower monthly charges, possibly indicating custom plans or billing issues.
+                </li>
+                <li>
+                    <strong>TotalCharges:</strong> Outliers indicate inconsistencies in total charges compared to tenure and monthly charges for Senior Citizens.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

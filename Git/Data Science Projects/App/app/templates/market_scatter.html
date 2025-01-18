@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Basket Analysis Scatter Plot</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Market Basket Analysis Scatter Plot</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Market Basket Scatter Plot -->
+            <img src="{{ url_for('static', filename='market_scatter_Quantity.png') }}" alt="Market Basket Analysis Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This scatter plot illustrates customer purchase behaviors in a Market Basket Analysis dataset. It visualizes relationships between different items, frequency of purchases, and potential buying patterns.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item Pair Frequency</td>
+                        <td>
+                            Represents the frequency of item pairs appearing together in transactions.
+                        </td>
+                        <td>
+                            The scatter plot displays common item pairs as well as outliers where certain combinations occur far more frequently than expected.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Amount</td>
+                        <td>
+                            Indicates the total monetary value of transactions.
+                        </td>
+                        <td>
+                            Higher transaction amounts correlate with more frequent and higher-value item pairs, evident from outliers.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Time of Purchase</td>
+                        <td>
+                            Reflects when purchases are made during the day.
+                        </td>
+                        <td>
+                            Peak purchase hours show more outliers, particularly in evening transactions when complementary items are frequently bought together.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Key insights from the scatter plot include:</p>
+            
+            <ul>
+                <li>
+                    <strong>Item Pair Frequency:</strong> Outliers highlight combinations that appear far more frequently than typical item pair occurrences, suggesting popular or strategic product bundles.
+                </li>
+                <li>
+                    <strong>Transaction Amount:</strong> Higher transaction outliers indicate purchases where expensive or premium items are bought more frequently.
+                </li>
+                <li>
+                    <strong>Time of Purchase:</strong> Evening peak times show outliers in complementary item purchases, reflecting shopping behavior during specific periods.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

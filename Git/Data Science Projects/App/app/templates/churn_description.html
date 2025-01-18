@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Churn Prediction Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='chrun.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Churn Prediction dataset contains customer information including demographic details, service usage, and contract details. This dataset is valuable for predicting customer churn based on various features such as tenure, service type, payment methods, and usage patterns.</p>
+
+            <h2>Sample Data (First 5 Entries)</h2>
+            <pre>
+customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Churn
+7590-VHVEG,Female,0,Yes,No,1,No,No phone service,DSL,No,Yes,
+57.7,29.85,No
+5575-GNVDE,Male,0,No,No,34,Yes,No,DSL,Yes,No,
+61.3,1889.5,No
+3668-QPYBK,Male,0,No,No,2,Yes,No,DSL,Yes,Yes,
+65.9,108.15,Yes
+7795-CFOCW,Male,0,No,No,45,No,No phone service,DSL,Yes,No,
+48.3,1840.75,No
+9237-HQITU,Female,0,No,No,2,Yes,No,Fiber optic,No,No,
+83.9,151.65,Yes
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>customerID</strong>: Unique identifier for each customer.</li>
+                <li><strong>gender</strong>: The gender of the customer.</li>
+                <li><strong>SeniorCitizen</strong>: Indicates if the customer is a senior citizen (1 for yes, 0 for no).</li>
+                <li><strong>Partner</strong>: Indicates if the customer has a partner (Yes or No).</li>
+                <li><strong>Dependents</strong>: Indicates if the customer has dependents (Yes or No).</li>
+                <li><strong>tenure</strong>: Number of months the customer has stayed with the service provider.</li>
+                <li><strong>PhoneService</strong>: Indicates if the customer has a phone service (Yes or No).</li>
+                <li><strong>MultipleLines</strong>: Indicates if the customer has multiple lines (Yes, No, or No phone service).</li>
+                <li><strong>InternetService</strong>: Type of internet service (DSL, Fiber optic, or No).</li>
+                <li><strong>OnlineSecurity</strong>: Indicates if the customer has online security service (Yes or No).</li>
+                <li><strong>OnlineBackup</strong>: Indicates if the customer has online backup service (Yes or No).</li>
+                <li><strong>DeviceProtection</strong>: Indicates if the customer has device protection service (Yes or No).</li>
+                <li><strong>TechSupport</strong>: Indicates if the customer has technical support service (Yes or No).</li>
+                <li><strong>StreamingTV</strong>: Indicates if the customer has streaming TV service (Yes or No).</li>
+                <li><strong>StreamingMovies</strong>: Indicates if the customer has streaming movies service (Yes or No).</li>
+                <li><strong>Contract</strong>: Type of contract (Month-to-month, One year, or Two year).</li>
+                <li><strong>PaperlessBilling</strong>: Indicates if the customer has paperless billing (Yes or No).</li>
+                <li><strong>PaymentMethod</strong>: Method of payment (e.g., Electronic check, Bank transfer, Credit card).</li>
+                <li><strong>MonthlyCharges</strong>: Monthly payment made by the customer.</li>
+                <li><strong>TotalCharges</strong>: Total amount paid by the customer.</li>
+                <li><strong>Churn</strong>: Indicates if the customer has churned (Yes or No).</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset is frequently used for churn prediction, providing insights into factors affecting customer retention and predicting which customers are likely to leave based on various demographic, service, and usage details.</p>
+        </div>
+    </div>
+</body>
+</html>

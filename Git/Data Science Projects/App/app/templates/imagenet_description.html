@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageNet Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ImageNet Dataset</h1>
+    </header>
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='imagenet.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <main>
+        <p>
+            The <strong>ImageNet Dataset</strong> is one of the largest and most widely-used 
+            datasets in computer vision. It provides millions of labeled images for training 
+            deep learning models, organized into a hierarchical structure following the WordNet 
+            lexical database. The associated metadata is available in a CSV file named 
+            <code>imagenet.csv</code>, which contains the following columns:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>synid</code></td>
+                    <td>Unique WordNet ID (synset ID) associated with a concept class.</td>
+                    <td>n00004475</td>
+                </tr>
+                <tr>
+                    <td><code>class_name</code></td>
+                    <td>Name of the class/concept associated with the synset ID.</td>
+                    <td>organism</td>
+                </tr>
+                <tr>
+                    <td><code>urls</code></td>
+                    <td>Number of image URLs available for this class.</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td><code>flickr_urls</code></td>
+                    <td>Number of Flickr image URLs available for this class.</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            This dataset is a foundational resource for image classification, object detection, 
+            and semantic segmentation tasks. It includes a variety of class types such as 
+            <em>organisms</em>, <em>artifacts</em>, <em>plants</em>, and more. Examples from the dataset include:
+        </p>
+        <ul>
+            <li><strong>SynID:</strong> <code>n00015388</code>, <strong>Class:</strong> animal</li>
+            <li><strong>SynID:</strong> <code>n00326094</code>, <strong>Class:</strong> rock climbing</li>
+            <li><strong>SynID:</strong> <code>n00017222</code>, <strong>Class:</strong> plant</li>
+        </ul>
+    </main>
+    <footer>
+        <p>ImageNet Dataset © 2024</p>
+    </footer>
+</body>
+</html>

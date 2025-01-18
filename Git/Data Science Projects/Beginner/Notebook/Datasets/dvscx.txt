@@ -1,0 +1,204 @@
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Item_Fat_Content', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Fat_Content Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Item_Visibility', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Visibility Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Item_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Type Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Item_MRP', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_MRP Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Outlet_Identifier', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Identifier Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Outlet_Establishment_Year', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Establishment_Year Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Outlet_Size', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Size Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Outlet_Location_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Location_Type Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Outlet_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Type Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Item_Outlet_Sales', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Outlet_Sales Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Remove the outliers from the dataset
+
+cleaned_data = data.copy()
+
+# Loop through outlier columns to remove outliers
+for feature in outlier_columns:
+    outliers = outliers_dict[feature]  # Get outliers for the current feature
+    cleaned_data = cleaned_data[~cleaned_data.index.isin(outliers.index)]  # Remove rows with outliers
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Item_Fat_Content', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Fat_Content Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Item_Visibility', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Visibility Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Item_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Type Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Item_MRP', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_MRP Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Outlet_Identifier', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Identifier Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Outlet_Establishment_Year', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Establishment_Year Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Outlet_Size', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Size Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Outlet_Location_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Location_Type Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Outlet_Type', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Outlet_Type Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Item_Outlet_Sales', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Item_Outlet_Sales Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Gender', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Gender Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Married', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Married Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Dependents', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Dependents Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Education', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Education Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='Self_Employed', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Self_Employed Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='ApplicantIncome', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with ApplicantIncome Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Visualize the original data with a pairplot (including outliers)
+sns.pairplot(data, hue='CoapplicantIncome', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with CoapplicantIncome Class Labels (Including Outliers)", y=1.02)
+plt.show()
+
+# Remove the outliers from the dataset
+
+cleaned_data = data.copy()
+
+# Loop through outlier columns to remove outliers
+for feature in outlier_columns:
+    outliers = outliers_dict[feature]  # Get outliers for the current feature
+    cleaned_data = cleaned_data[~cleaned_data.index.isin(outliers.index)]  # Remove rows with outliers
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Gender', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Gender Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Married', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Married Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Dependents', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Dependents Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Education', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Education Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='Self_Employed', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with Self_Employed Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='ApplicantIncome', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with ApplicantIncome Class Labels (After Removing Outliers)", y=1.02)
+plt.show()
+
+# Visualize the cleaned data with a pairplot (after removing outliers)
+sns.pairplot(cleaned_data, hue='CoapplicantIncome', plot_kws={'alpha': 0.5})
+plt.suptitle("Pairplot of Features with CoapplicantIncome Class Labels (After Removing Outliers)", y=1.02)
+plt.show()

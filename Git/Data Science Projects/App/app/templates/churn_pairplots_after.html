@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Pairplots Without Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Churn Prediction Pairplots Without Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplots for selected columns -->
+            <img src="{{ url_for('static', filename='chrun_removed_outliers_Churn.png') }}" alt="Churn and Dependents Pairplot">
+            <img src="{{ url_for('static', filename='chrun_removed_outliers_Dependents.png') }}" alt="Gender and Partner Pairplot">
+            <img src="{{ url_for('static', filename='chrun_removed_outliers_gender.png') }}" alt="PhoneService and Churn Pairplot">
+            <img src="{{ url_for('static', filename='chrun_removed_outliers_Partner.png') }}" alt="Gender and Partner Pairplot">
+            <img src="{{ url_for('static', filename='chrun_removed_outliers_PhoneService.png') }}" alt="PhoneService and Churn Pairplot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                After removing outliers, the pairplots in the Churn Prediction dataset focus on typical relationships between key attributes. 
+                These visualizations provide a clearer understanding of standard patterns and behaviors in the data, ensuring that extreme values do not distort insights.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Removed)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Churn</td>
+                        <td>
+                            Indicates whether a customer has churned (Yes/No).
+                        </td>
+                        <td>
+                            Pairplots highlight common churn behaviors, providing a balanced view of typical customer attrition trends without the impact of extreme cases.
+                        </td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Dependents</td>
+                        <td>
+                            Indicates whether the customer has dependents (Yes/No).
+                        </td>
+                        <td>
+                            Regular patterns of churn among customers with dependents are more evident, highlighting typical family-related decisions.
+                        </td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            Gender of the customer (Male/Female).
+                        </td>
+                        <td>
+                            Pairplots without outliers show clearer trends in gender-specific churn behaviors, eliminating data inconsistencies.
+                        </td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Partner</td>
+                        <td>
+                            Indicates whether the customer has a partner (Yes/No).
+                        </td>
+                        <td>
+                            Visualizations provide a balanced view of the influence of having a partner on churn rates, focusing on typical cases.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>PhoneService</td>
+                        <td>
+                            Indicates whether the customer has a phone service (Yes/No).
+                        </td>
+                        <td>
+                            Common patterns in phone service usage and churn are more pronounced, highlighting consistent behaviors.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Removal Details</h3>
+            <p>Key insights after removing outliers include:</p>
+            <ul>
+                <li>
+                    <strong>Churn:</strong> Focused trends emerge after excluding extreme churn behaviors, offering clearer insights into typical customer attrition.
+                </li>
+                <li>
+                    <strong>Dependents:</strong> Removing outliers enables a more accurate view of how dependents influence churn likelihood.
+                </li>
+                <li>
+                    <strong>Gender:</strong> A balanced visualization of churn trends across genders highlights consistent patterns.
+                </li>
+                <li>
+                    <strong>Partner:</strong> Excluding outliers reveals standard partner-related effects on churn.
+                </li>
+                <li>
+                    <strong>PhoneService:</strong> Pairplots without outliers provide a reliable depiction of how phone service usage correlates with churn.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

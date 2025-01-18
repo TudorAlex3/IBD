@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Analysis Dataset: Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Series Analysis Dataset: Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Images for Count and Datetime outliers -->
+            <img src="{{ url_for('static', filename='time_outliers_count.png') }}" alt="Time Series Outliers - Count">
+            <img src="{{ url_for('static', filename='time_outliers_datetime.png') }}" alt="Time Series Outliers - Datetime">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Time Series Analysis: Outliers in Column Count and Datetime</h2>
+            <p>
+                In this time series dataset, two crucial factors were identified for outlier analysis: the **count** of observations and the **datetime** values. Outliers in these areas are important for understanding potential errors, such as missing data points or incorrect timestamps, that could skew the analysis or lead to incorrect predictions.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Outliers (Count)</th>
+                        <th>Key Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Count</td>
+                        <td>Number of observations or records in the dataset</td>
+                        <td>15</td>
+                        <td>Outliers in the count metric represent abnormal variations in the number of records, possibly due to missing or extra data points that could affect the overall analysis.</td>
+                    </tr>
+                    <tr>
+                        <td>Datetime</td>
+                        <td>Timestamp of each observation</td>
+                        <td>8</td>
+                        <td>Outliers in the datetime column could indicate incorrect time entries or data collected at unusual times, which may not be representative of the dataset's true distribution.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>
+                Outliers in the **count** column might indicate missing or duplicate records, which could distort time series modeling and forecasting. Similarly, outliers in the **datetime** column could represent faulty timestamp entries, leading to incorrect time sequencing and analysis. Identifying and removing these outliers is essential for maintaining the integrity of the time series analysis.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

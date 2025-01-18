@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageNet Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>ImageNet Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter Plots for flickr_urls and urls -->
+            <img src="{{ url_for('static', filename='imagenet_scatter_flickr_urls.png') }}" alt="Scatter Plot of flickr_urls">
+            <img src="{{ url_for('static', filename='imagenet_scatter_urls.png') }}" alt="Scatter Plot of urls">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This section provides scatter plots for the ImageNet dataset focusing on URLs associated with images. The plots explore relationships and distributions between `flickr_urls` and `urls`.
+            </p>
+            
+            <h2>Scatter Plot Observations</h2>
+            <p>The scatter plots of `flickr_urls` and `urls` provide insights into the distribution and correlations between the linked image sources.</p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>flickr_urls</td>
+                        <td>
+                            URLs pointing to images hosted on Flickr.
+                        </td>
+                        <td>
+                            The scatter plot shows a wide range of link densities, with peaks around popular image groups or categories.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>urls</td>
+                        <td>
+                            General URLs associated with images (e.g., Flickr, other image hosting sites).
+                        </td>
+                        <td>
+                            Similar to `flickr_urls`, the scatter plot demonstrates distributions where high-frequency URLs are concentrated around specific categories or regions.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Insights from Scatter Plots</h3>
+            <p>Key insights derived from the scatter plots:</p>
+            
+            <ul>
+                <li>
+                    <strong>flickr_urls:</strong> Indicates clustering of images around popular categories or specific thematic groups.
+                </li>
+                <li>
+                    <strong>urls:</strong> Highlights areas where multiple image sources converge, providing insights into image popularity and dissemination.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wine Quality Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='winequality.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Wine Quality dataset consists of chemical properties of red and white wines, along with their quality ratings. The dataset is typically used for regression or classification tasks to predict the wine quality based on these properties. It includes both red and white wine data, with a target variable representing wine quality.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+['white', 7, 0.27, 0.36, 20.7, 0.045, 45, 170, 1.001, 3, 0.45, 8.8, 6]
+['white', 6.3, 0.3, 0.34, 1.6, 0.049, 14, 132, 0.994, 3.3, 0.49, 9.5, 6]
+['white', 8.1, 0.28, 0.4, 6.9, 0.05, 30, 97, 0.9951, 3.26, 0.44, 10.1, 6]
+['white', 7.2, 0.23, 0.32, 8.5, 0.058, 47, 186, 0.9956, 3.19, 0.4, 9.9, 6]
+['white', 7.2, 0.23, 0.32, 8.5, 0.058, 47, 186, 0.9956, 3.19, 0.4, 9.9, 6]
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>type</strong>: Type of wine (red or white).</li>
+                <li><strong>fixed acidity</strong>: Amount of fixed acids in the wine (g/dm³).</li>
+                <li><strong>volatile acidity</strong>: Amount of volatile acids in the wine (g/dm³).</li>
+                <li><strong>citric acid</strong>: Amount of citric acid in the wine (g/dm³).</li>
+                <li><strong>residual sugar</strong>: Amount of residual sugar in the wine (g/dm³).</li>
+                <li><strong>chlorides</strong>: Amount of chlorides in the wine (g/dm³).</li>
+                <li><strong>free sulfur dioxide</strong>: Amount of free sulfur dioxide in the wine (mg/dm³).</li>
+                <li><strong>total sulfur dioxide</strong>: Total sulfur dioxide in the wine (mg/dm³).</li>
+                <li><strong>density</strong>: The density of the wine (g/cm³).</li>
+                <li><strong>pH</strong>: pH level of the wine.</li>
+                <li><strong>sulphates</strong>: Amount of sulphates in the wine (g/dm³).</li>
+                <li><strong>alcohol</strong>: Alcohol content in the wine (percentage).</li>
+                <li><strong>quality</strong>: Quality of the wine, rated between 0 and 10 (target variable).</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Wine Quality dataset includes 4,898 entries (1,599 red wine and 3,299 white wine entries) and 12 attributes. The attributes are chemical characteristics of the wine, with the target variable being the wine quality score, ranging from 0 (worst) to 10 (best). The dataset provides valuable information for predicting wine quality based on various factors such as acidity, sugar content, alcohol percentage, and sulfur levels. The dataset is widely used for predictive modeling, where the goal is to predict the wine's quality score based on its chemical composition.</p>
+
+            <h2>Conclusion</h2>
+            <p>This dataset is ideal for performing regression tasks, where the goal is to predict continuous values (wine quality). It also allows for classification tasks where the goal is to categorize wines into quality groups. Given its relatively balanced distribution of white and red wine data, along with a variety of features related to wine chemistry, this dataset is useful for both educational and professional purposes in machine learning and data science.</p>
+        </div>
+    </div>
+</body>
+</html>

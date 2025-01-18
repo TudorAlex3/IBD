@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dataset: ProvinceState Pairplots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>COVID-19 Dataset: ProvinceState Pairplots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for Confirmed Cases vs. ProvinceState -->
+            <img src="{{ url_for('static', filename='covid_outliers_ProvinceState.png') }}" alt="ProvinceState vs Confirmed Cases">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>ProvinceState Pairplots Analysis</h2>
+            <p>
+                This report provides visual insights into the relationship between ProvinceState and key numerical variables—Confirmed Cases, Deaths, and Recovered cases. Outliers, if present, are identified to highlight regions with extreme values that may require deeper investigation.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Outliers (Count)</th>
+                        <th>Key Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Confirmed Cases</td>
+                        <td>Number of confirmed COVID-19 cases in a ProvinceState</td>
+                        <td>25</td>
+                        <td>Outliers represent regions with significantly higher cases, indicating potential hotspots or regions with extensive testing or rapid spread.</td>
+                    </tr>
+                    <tr>
+                        <td>Deaths</td>
+                        <td>Number of deaths due to COVID-19 in a ProvinceState</td>
+                        <td>18</td>
+                        <td>Outliers suggest areas with very high mortality rates, possibly reflecting severe impacts of the virus.</td>
+                    </tr>
+                    <tr>
+                        <td>Recovered</td>
+                        <td>Number of recoveries from COVID-19 in a ProvinceState</td>
+                        <td>22</td>
+                        <td>High recovery outliers indicate successful containment and recovery efforts in certain regions.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Outliers for ProvinceState-based pairplots provide insights into regions with extreme values for Confirmed, Deaths, or Recovered cases, which may be attributed to localized outbreaks or disparities in healthcare infrastructure.</p>
+        </div>
+    </div>
+</body>
+</html>

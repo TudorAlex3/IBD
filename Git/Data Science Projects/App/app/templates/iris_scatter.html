@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scatter Plots with Outliers</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='iris_scatter_sepal width (cm).png') }}" alt="Scatter Plot with Outliers">
+        <div class="summary">
+            <h2>Data Summary</h2>
+            <p><strong>Column Details:</strong></p>
+            <ul>
+                <li><strong>sepal length (cm)</strong>: Type: float64, Unique values: 35</li>
+                <li><strong>sepal width (cm)</strong>: Type: float64, Unique values: 23</li>
+                <li><strong>petal length (cm)</strong>: Type: float64, Unique values: 43</li>
+                <li><strong>petal width (cm)</strong>: Type: float64, Unique values: 22</li>
+                <li><strong>species</strong>: Type: int64, Unique values: 3</li>
+            </ul>
+            <h2>Missing Values</h2>
+            <pre>
+            Number of missing values in each column before filling:
+            sepal length (cm)    0
+            sepal width (cm)     0
+            petal length (cm)    0
+            petal width (cm)     0
+            species              0
+            dtype: int64
+            </pre>
+            <h2>Explanation of Scatter Plot</h2>
+            <p>The scatter plot shows the relationship between the "sepal length" and "sepal width" features with outliers highlighted. Some points lie far from the general trend, which might indicate potential outliers in the dataset.</p>
+            <p>In the scatter plot, the outliers are more visible in cases where there is significant deviation from the common clusters formed by the majority of the data points.</p>
+        </div>
+    </div>
+</body>
+</html>

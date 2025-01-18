@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wine Quality Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='wine_outliers_alcohol.png') }}" alt="Application Outliers Included">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='wine_outliers_chlorides.png') }}" alt="Coapplicant Outliers Included">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='wine_outliers_citric.png') }}" alt="Loan Dependents Outliers Included">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='wine_outliers_density.png') }}" alt="Loan Education Outliers Included">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='wine_outliers_fixed.png') }}" alt="Loan Gender Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_free.png') }}" alt="Loan Married Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_ph.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_residual.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_sulphates.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_total.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='wine_outliers_volatile.png') }}" alt="Loan Self Employed Outliers Included">
+        </div>
+        
+
+        <!-- Summary Section -->
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis provides insights into the Wine Quality Dataset, focusing on key wine attributes and their relationships to quality scores. Outliers, which significantly deviate from general trends, are included to uncover unique patterns, potential anomalies, and areas for improvement in wine production.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alcohol</td>
+                        <td>
+                            The alcohol content of wine, a significant factor influencing taste and perceived quality. Higher alcohol levels generally correlate with better quality.
+                        </td>
+                        <td>
+                            Outliers include wines with exceptionally low (below 8%) or high (above 15%) alcohol levels, which may reflect unique winemaking techniques or data errors.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Chlorides</td>
+                        <td>
+                            Represents the salt content in wine, which can impact taste. Lower levels are generally preferred for quality.
+                        </td>
+                        <td>
+                            High chloride outliers suggest unusual production processes or potential contamination, which can negatively affect flavor.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Citric Acid</td>
+                        <td>
+                            A natural component that contributes to the freshness and acidity of wine. Moderate levels are typically desirable.
+                        </td>
+                        <td>
+                            Outliers with extremely high or low citric acid levels may indicate experimental fermentation processes or blending anomalies.
+                        </td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Density</td>
+                        <td>
+                            Reflects the wine's sugar and alcohol content. It can be an indicator of sweetness or residual sugar.
+                        </td>
+                        <td>
+                            Outliers with unusually high densities often signify sweet wines or fermentation issues that leave residual sugar.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>pH</td>
+                        <td>
+                            Measures the acidity of wine. A balanced pH is crucial for flavor and stability.
+                        </td>
+                        <td>
+                            Outliers with extremely low or high pH levels may lead to wines being overly acidic or flat in taste.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations about outliers within the dataset:</p>
+            
+            <ul>
+                <li>
+                    <strong>Alcohol:</strong> Wines with alcohol content above 15% or below 8% deviate significantly from the norm. These may represent unique wine varieties or irregular production techniques.
+                </li>
+                <li>
+                    <strong>Chlorides:</strong> High chloride levels, such as in certain samples, suggest either experimental preservation methods or data inconsistencies.
+                </li>
+                <li>
+                    <strong>Citric Acid:</strong> Wines with minimal citric acid levels are less tart, possibly reflecting a stylistic choice in production.
+                </li>
+                <li>
+                    <strong>Density:</strong> Higher density wines are often associated with dessert wines due to their elevated sugar content, marking them as unique outliers.
+                </li>
+                <li>
+                    <strong>pH:</strong> Extreme pH values can impact shelf life and flavor profile, indicating either experimental batches or measurement errors.
+                </li>
+            </ul>
+        </div>
+        
+
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

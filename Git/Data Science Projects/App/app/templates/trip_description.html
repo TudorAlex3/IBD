@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip History Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trip History Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='2010-capitalbikeshare-tripdata.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Trip History dataset contains information about bike share trips, including their duration, start and end locations, and other relevant details. This dataset is ideal for analyzing travel patterns, studying user behavior, and optimizing bike share systems.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+"Duration","Start date","End date","Start station number","Start station","End station number","End station","Bike number",
+"Member type"
+"1012","2010-09-20 11:27:04","2010-09-20 11:43:56","31208","M St & New Jersey Ave SE","31108","4th & M St SW","W00742",
+"Member"
+"61","2010-09-20 11:41:22","2010-09-20 11:42:23","31209","1st & N St  SE","31209","1st & N St  SE","W00032",
+"Member"
+"2690","2010-09-20 12:05:37","2010-09-20 12:50:27","31600","5th & K St NW","31100","19th St & Pennsylvania Ave NW","W00993",
+"Member"
+"1406","2010-09-20 12:06:05","2010-09-20 12:29:32","31600","5th & K St NW","31602","Park Rd & Holmead Pl NW","W00344",
+"Member"
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>Duration</strong>: Trip duration in seconds.</li>
+                <li><strong>Start date</strong>: Date and time when the trip started.</li>
+                <li><strong>End date</strong>: Date and time when the trip ended.</li>
+                <li><strong>Start station number</strong>: Unique identifier for the starting station.</li>
+                <li><strong>Start station</strong>: Name of the starting station.</li>
+                <li><strong>End station number</strong>: Unique identifier for the ending station.</li>
+                <li><strong>End station</strong>: Name of the ending station.</li>
+                <li><strong>Bike number</strong>: Unique identifier for the bike used.</li>
+                <li><strong>Member type</strong>: Indicates whether the user is a member or a casual rider.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset provides a detailed history of trips in a bike share program, with 9 columns capturing key information. The dataset is suitable for applications in urban planning, transportation analysis, and predictive modeling to improve bike share operations.</p>
+        </div>
+    </div>
+</body>
+</html>

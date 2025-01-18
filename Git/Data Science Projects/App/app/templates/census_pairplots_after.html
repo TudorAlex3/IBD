@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census Dataset Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Census Dataset Pairplots After Removing Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <img src="{{ url_for('static', filename='census_removed_outliers_income.png') }}" alt="Census Outliers Income">
+            <img src="{{ url_for('static', filename='census_removed_outliers_marital.status.png') }}" alt="Census Outliers Marital Status">
+            <img src="{{ url_for('static', filename='census_removed_outliers_sex.png') }}" alt="Census Outliers Sex">
+            <img src="{{ url_for('static', filename='census_removed_outliers_workclass.png') }}" alt="Census Outliers Workclass">
+        </div>
+
+        <div class="summary">
+            <h2>Post-Outlier Removal Summary</h2>
+            <p>
+                The removal of outliers from the Census dataset has led to a cleaner distribution of variables such as income, marital status, sex, and work class. By eliminating extreme data points, the analysis now better reflects typical trends.
+            </p>
+
+            <h3>Key Insights Post-Outlier Removal</h3>
+            <ul>
+                <li>
+                    <strong>Income Distribution:</strong>
+                    After removing outliers, the income distribution is more evenly spread, offering a clearer view of typical income ranges across different groups.
+                </li>
+                <li>
+                    <strong>Marital Status:</strong>
+                    Removing outliers results in a more consistent distribution of marital status, helping to better understand its impact on other variables.
+                </li>
+                <li>
+                    <strong>Gender and Work Class:</strong>
+                    With outliers excluded, the relationships between gender and work class are more apparent, showing more typical employment trends.
+                </li>
+            </ul>
+
+            <h3>Improved Visual Insights</h3>
+            <ul>
+                <li>
+                    <strong>Income vs Marital Status:</strong>
+                    After removing outliers, the scatter plot illustrates a clearer relationship between income and marital status, reflecting a more realistic income distribution.
+                </li>
+                <li>
+                    <strong>Sex vs Work Class:</strong>
+                    The cleaned dataset highlights the gender-based differences in employment categories, providing more reliable insights.
+                </li>
+            </ul>
+
+            <p>
+                Removing outliers has greatly enhanced the quality of the data and the insights that can be drawn from it. This cleaned dataset is now more suitable for predictive modeling and further analysis.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

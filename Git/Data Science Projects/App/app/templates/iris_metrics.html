@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Metrics Comparison</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Metrics Comparison</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='iris_metrics.png') }}" alt="Model Metrics">
+        <div class="summary">
+            <h2>Classification Report for Logistic Regression</h2>
+            <pre>
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        10
+           1       1.00      1.00      1.00         9
+           2       1.00      1.00      1.00        11
+
+    accuracy                           1.00        30
+   macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
+            </pre>
+
+            <h2>Classification Report for Decision Tree</h2>
+            <pre>
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        10
+           1       1.00      1.00      1.00         9
+           2       1.00      1.00      1.00        11
+
+    accuracy                           1.00        30
+   macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
+            </pre>
+
+            <h2>Classification Report for Random Forest</h2>
+            <pre>
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        10
+           1       1.00      1.00      1.00         9
+           2       1.00      1.00      1.00        11
+
+    accuracy                           1.00        30
+   macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
+            </pre>
+
+            <h2>Explanation</h2>
+            <p>The Iris dataset is small and easy for machine learning models to classify accurately. In this case, all three models (Logistic Regression, Decision Tree, and Random Forest) achieved perfect accuracy of 1.0, meaning they correctly classified all instances.</p>
+            <p>These models do not exhibit any significant loss or misclassification, which is a typical result for small datasets like Iris. With such a small dataset, the models easily fit the data without overfitting.</p>
+            <p><strong>Overall Conclusion:</strong> The models perform perfectly, with precision, recall, and F1-score all equal to 1.0 across all classes.</p>
+        </div>
+    </div>
+</body>
+</html>

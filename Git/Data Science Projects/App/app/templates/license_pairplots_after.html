@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>License Plate Recognition Dataset Pairplots After Removing Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for EngineSize -->
+            <img src="{{ url_for('static', filename='license_removed_outliers_engineSize.png') }}" alt="Engine Size Outliers Removed">
+            <!-- Scatter plot for FuelType -->
+            <img src="{{ url_for('static', filename='license_removed_outliers_fuelType.png') }}" alt="Fuel Type Outliers Removed">
+            <!-- Scatter plot for Transmission -->
+            <img src="{{ url_for('static', filename='license_removed_outliers_transmission.png') }}" alt="Transmission Outliers Removed">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Post-Outlier Removal Analysis</h2>
+            <p>
+                After identifying and removing the outliers from the dataset, the remaining data provides a more accurate understanding of the relationships between `engineSize`, `fuelType`, and `transmission` with the rest of the data. Outliers can skew insights, but with them removed, the patterns and correlations become clearer.
+            </p>
+        
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Pre-Outlier Analysis</th>
+                        <th>Post-Outlier Analysis</th>
+                        <th>Key Insights</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Engine Size</td>
+                        <td>
+                            Before removing outliers, the scatter plot showed a wide range of engine sizes with some extremely small or large values distorting the overall distribution.
+                        </td>
+                        <td>
+                            Post-outlier removal, the engine size plot shows a more consistent range, helping to understand typical engine sizes used in vehicles more clearly.
+                        </td>
+                        <td>Engine sizes are more centralized, reducing the influence of outliers.</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Type</td>
+                        <td>
+                            High outlier values in fuel type skewed the scatter plot, making the relationship with other variables difficult to assess.
+                        </td>
+                        <td>
+                            After cleaning, fuel type distribution appears more balanced, facilitating a better understanding of how fuel type impacts vehicle performance and recognition.
+                        </td>
+                        <td>Fuel type now provides a more realistic view of usage patterns.</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>
+                            Outliers in transmission categories led to a misleading view of the distribution, making the scatter plot less informative.
+                        </td>
+                        <td>
+                            Post-cleaning, the transmission plot shows a clearer view of typical transmission distributions, helping to analyze patterns more effectively.
+                        </td>
+                        <td>Transmission data reflects a more balanced and realistic distribution.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Graphics and Insights</h3>
+            <p>Below are the graphics after the removal of outliers:</p>
+            <ul>
+                <li>
+                    <strong>Engine Size vs Fuel Type:</strong> The cleaned scatter plot demonstrates a clearer distribution of engine sizes with respect to different fuel types, without the distortion caused by outliers.
+                </li>
+                <li>
+                    <strong>Fuel Type vs Transmission:</strong> The refined plot reveals a more balanced relationship between fuel type and transmission, allowing better understanding of vehicle configurations.
+                </li>
+                <li>
+                    <strong>Transmission Distribution:</strong> A histogram for transmission now reflects a more typical distribution, with fewer extreme values influencing the analysis.
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

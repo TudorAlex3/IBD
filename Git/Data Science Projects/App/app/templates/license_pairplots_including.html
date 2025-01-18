@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>License Plate Recognition Dataset Pair Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for engineSize vs fuelType -->
+            <img src="{{ url_for('static', filename='license_outliers_engineSize.png') }}" alt="Engine Size vs Fuel Type Pairplot">
+            <img src="{{ url_for('static', filename='license_outliers_fuelType.png') }}" alt="Engine Size vs Fuel Type Pairplot">
+            <!-- Pairplot for engineSize vs transmission -->
+            <img src="{{ url_for('static', filename='license_outliers_transmission.png') }}" alt="Engine Size vs Transmission Pairplot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis provides insights into the relationship between key vehicle attributes and their impact on license plate recognition. The inclusion of outliers helps highlight unique patterns and areas that may require further investigation.
+            </p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Engine Size</td>
+                        <td>
+                            Represents the size of the engine, which may influence performance and efficiency.
+                        </td>
+                        <td>
+                            Outliers in engine size could indicate unusual vehicle designs or experimental configurations.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Type</td>
+                        <td>
+                            Indicates the type of fuel used (e.g., petrol, diesel). Different fuel types may impact performance and emissions.
+                        </td>
+                        <td>
+                            Certain fuel type outliers could reflect experimental setups or unique use cases.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>
+                            Describes the transmission type (e.g., manual, automatic) influencing driving experience and efficiency.
+                        </td>
+                        <td>
+                            Outliers might highlight vehicles with atypical transmission configurations, such as custom or rare setups.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the pairplots:</p>
+            
+            <ul>
+                <li>
+                    <strong>Engine Size:</strong> Unusual engine sizes, such as those exceeding typical ranges, could reflect custom vehicle designs or rare configurations.
+                </li>
+                <li>
+                    <strong>Fuel Type:</strong> High counts of diesel or electric fuel types may suggest alternative or experimental fuel applications.
+                </li>
+                <li>
+                    <strong>Transmission:</strong> Custom or rare transmission setups, such as dual-clutch or manual-only vehicles, are identified as outliers.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

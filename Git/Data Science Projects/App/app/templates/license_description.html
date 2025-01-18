@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Number Plate Recognition System Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #5e60ce;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #e0e7ff;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>License Number Plate Recognition System Dataset</h1>
+    </header>
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='license_number.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <main>
+        <p>
+            The <strong>License Number Plate Recognition System Dataset</strong> provides comprehensive data on vehicle details, 
+            which can be used for building recognition systems or analyzing vehicle-related trends. 
+            The dataset is available in a CSV file named <code>license_number.csv</code> and contains the following columns:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>model</code></td>
+                    <td>Vehicle model name or code.</td>
+                    <td>A1</td>
+                </tr>
+                <tr>
+                    <td><code>year</code></td>
+                    <td>Year of manufacture.</td>
+                    <td>2017</td>
+                </tr>
+                <tr>
+                    <td><code>price</code></td>
+                    <td>Price of the vehicle (in currency units).</td>
+                    <td>12500</td>
+                </tr>
+                <tr>
+                    <td><code>transmission</code></td>
+                    <td>Type of transmission (e.g., Manual or Automatic).</td>
+                    <td>Manual</td>
+                </tr>
+                <tr>
+                    <td><code>mileage</code></td>
+                    <td>Mileage of the vehicle (in miles or kilometers).</td>
+                    <td>15735</td>
+                </tr>
+                <tr>
+                    <td><code>fuelType</code></td>
+                    <td>Type of fuel used (e.g., Petrol, Diesel).</td>
+                    <td>Petrol</td>
+                </tr>
+                <tr>
+                    <td><code>tax</code></td>
+                    <td>Tax amount (in currency units).</td>
+                    <td>150.0</td>
+                </tr>
+                <tr>
+                    <td><code>mpg</code></td>
+                    <td>Miles per gallon (fuel efficiency).</td>
+                    <td>55.4</td>
+                </tr>
+                <tr>
+                    <td><code>engineSize</code></td>
+                    <td>Engine size of the vehicle (in liters).</td>
+                    <td>1.4</td>
+                </tr>
+                <tr>
+                    <td><code>reference</code></td>
+                    <td>Reference or unique identifier for the vehicle.</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            This dataset is highly suitable for machine learning models aimed at license plate recognition, 
+            vehicle pricing predictions, or building automated vehicle identification systems.
+        </p>
+    </main>
+    <footer>
+        <p>License Number Plate Recognition System Dataset © 2024</p>
+    </footer>
+</body>
+</html>

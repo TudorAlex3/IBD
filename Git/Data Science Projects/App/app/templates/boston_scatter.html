@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston Housing Dataset Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boston Housing Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for CRIM -->
+            <img src="{{ url_for('static', filename='boston_scatter_B.png') }}" alt="CRIM Scatter Plot">
+            <!-- Scatter plot for ZN -->
+            <img src="{{ url_for('static', filename='boston_scatter_CHAS.png') }}" alt="ZN Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_CRIM.png') }}" alt="INDUS Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_DIS.png') }}" alt="CHAS Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_LSTAT.png') }}" alt="NOX Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_MEDV.png') }}" alt="RM Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_PTRATIO.png') }}" alt="AGE Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_RM.png') }}" alt="DIS Scatter Plot">
+            <img src="{{ url_for('static', filename='boston_scatter_ZN.png') }}" alt="LSTAT Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides a detailed analysis of the Boston Housing dataset using scatter plots, 
+                focusing on key numerical variables and their relationships. Outliers in the data are 
+                highlighted, which can provide insights into unusual trends or errors in the dataset.
+            </p>
+    
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CRIM</td>
+                        <td>
+                            Crime rate in the area. Higher values indicate higher crime rates.
+                        </td>
+                        <td>
+                            Some regions with exceptionally high crime rates stand out, which could be outliers representing unusual neighborhoods.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>ZN</td>
+                        <td>
+                            Proportion of residential land zoned for large lots. Higher values suggest wealthier areas.
+                        </td>
+                        <td>
+                            Some areas with high proportions of zoned land have significantly higher property values, contributing to outliers.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>RM</td>
+                        <td>
+                            Average number of rooms per dwelling. Generally, more rooms lead to higher property value.
+                        </td>
+                        <td>
+                            Some properties with a high number of rooms are outliers due to unusually large homes in the dataset.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>AGE</td>
+                        <td>
+                            Proportion of owner-occupied homes built before 1940.
+                        </td>
+                        <td>
+                            Certain neighborhoods with a high percentage of old houses are outliers, indicating aging infrastructure.
+                        </td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>LSTAT</td>
+                        <td>
+                            Percentage of lower status population. High values typically correlate with lower property values.
+                        </td>
+                        <td>
+                            Outliers include areas with unusually high percentages of low-income residents, affecting housing prices.
+                        </td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>MEDV</td>
+                        <td>
+                            Median value of owner-occupied homes. A key metric in housing pricing.
+                        </td>
+                        <td>
+                            Outliers include properties with exceptionally high median values, often located in wealthier areas.
+                        </td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            <ul>
+                <li>
+                    <strong>CRIM:</strong> Outliers are areas with crime rates significantly above the median, indicating areas with potential issues that could influence property values.
+                </li>
+                <li>
+                    <strong>ZN:</strong> Outliers are wealthy neighborhoods with a high proportion of residential land zoned for large lots, contributing to higher property values.
+                </li>
+                <li>
+                    <strong>RM:</strong> Some properties with an unusually high number of rooms are outliers, suggesting these homes are significantly larger than typical housing in the area.
+                </li>
+                <li>
+                    <strong>AGE:</strong> Outliers include areas with many homes built before 1940, which may indicate older housing stock that may need significant investment.
+                </li>
+                <li>
+                    <strong>LSTAT:</strong> Outliers represent areas with a very high percentage of lower-income residents, which tend to negatively affect property values.
+                </li>
+                <li>
+                    <strong>MEDV:</strong> Outliers in this category include homes with exceptionally high prices, often found in affluent neighborhoods with desirable amenities.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

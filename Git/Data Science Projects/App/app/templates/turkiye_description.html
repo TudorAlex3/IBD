@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkiye Student Evaluation Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Turkiye Student Evaluation Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='turkiye-student-evaluation.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>This dataset contains the evaluations of students' performance in a variety of courses in Turkey. The dataset includes information on student attendance, course difficulty, and evaluations of different aspects of the course.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+<pre>
+[1, 2, 1, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+[1, 2, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+[1, 2, 1, 2, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+[1, 2, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+[1, 2, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+</pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>instr</strong>: Instructor identifier for the course.</li>
+                <li><strong>class</strong>: Class number (course identifier).</li>
+                <li><strong>nb.repeat</strong>: Number of times the course has been repeated.</li>
+                <li><strong>attendance</strong>: The attendance rate of the student.</li>
+                <li><strong>difficulty</strong>: Rating of the course difficulty on a scale of 1 to 5.</li>
+                <li><strong>Q1</strong>: Rating of the first aspect of the course (e.g., teaching quality).</li>
+                <li><strong>Q2</strong>: Rating of the second aspect of the course.</li>
+                <li><strong>Q3</strong>: Rating of the third aspect of the course.</li>
+                <li><strong>Q4</strong>: Rating of the fourth aspect of the course.</li>
+                <li><strong>Q5</strong>: Rating of the fifth aspect of the course.</li>
+                <li><strong>Q6</strong>: Rating of the sixth aspect of the course.</li>
+                <li><strong>Q7</strong>: Rating of the seventh aspect of the course.</li>
+                <li><strong>Q8</strong>: Rating of the eighth aspect of the course.</li>
+                <li><strong>Q9</strong>: Rating of the ninth aspect of the course.</li>
+                <li><strong>Q10</strong>: Rating of the tenth aspect of the course.</li>
+                <li><strong>Q11</strong>: Rating of the eleventh aspect of the course.</li>
+                <li><strong>Q12</strong>: Rating of the twelfth aspect of the course.</li>
+                <li><strong>Q13</strong>: Rating of the thirteenth aspect of the course.</li>
+                <li><strong>Q14</strong>: Rating of the fourteenth aspect of the course.</li>
+                <li><strong>Q15</strong>: Rating of the fifteenth aspect of the course.</li>
+                <li><strong>Q16</strong>: Rating of the sixteenth aspect of the course.</li>
+                <li><strong>Q17</strong>: Rating of the seventeenth aspect of the course.</li>
+                <li><strong>Q18</strong>: Rating of the eighteenth aspect of the course.</li>
+                <li><strong>Q19</strong>: Rating of the nineteenth aspect of the course.</li>
+                <li><strong>Q20</strong>: Rating of the twentieth aspect of the course.</li>
+                <li><strong>Q21</strong>: Rating of the twenty-first aspect of the course.</li>
+                <li><strong>Q22</strong>: Rating of the twenty-second aspect of the course.</li>
+                <li><strong>Q23</strong>: Rating of the twenty-third aspect of the course.</li>
+                <li><strong>Q24</strong>: Rating of the twenty-fourth aspect of the course.</li>
+                <li><strong>Q25</strong>: Rating of the twenty-fifth aspect of the course.</li>
+                <li><strong>Q26</strong>: Rating of the twenty-sixth aspect of the course.</li>
+                <li><strong>Q27</strong>: Rating of the twenty-seventh aspect of the course.</li>
+                <li><strong>Q28</strong>: Rating of the twenty-eighth aspect of the course.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Turkiye Student Evaluation dataset contains survey results from students evaluating their courses and instructors. The dataset has 1,000 rows and 28 columns, including the instructor, class number, attendance, course difficulty, and evaluations for 28 different aspects of the course.</p>
+        </div>
+    </div>
+</body>
+</html>

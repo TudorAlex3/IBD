@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Crime Dataset Pairplots Without Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chicago Crime Dataset Pairplots Without Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for IUCR, Primary -->
+            <img src="{{ url_for('static', filename='chicago_removed_outliers_IUCR.png') }}" alt="Chicago Crime Pairplot - IUCR Without Outliers">
+            <img src="{{ url_for('static', filename='chicago_removed_outliers_Primary.png') }}" alt="Chicago Crime Pairplot - Primary Without Outliers">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                After removing outliers, the pairplots in the Chicago Crime dataset focus on typical relationships between **IUCR** and **Primary** categories. These visualizations provide a clearer understanding of standard interactions within the dataset without extreme data points.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Removed)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IUCR</td>
+                        <td>
+                            Represents the Illinois Uniform Crime Reporting code, categorizing crimes by type.
+                        </td>
+                        <td>
+                            Pairplots demonstrate standard interactions and patterns in crime categorization without the influence of outliers.
+                        </td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Primary</td>
+                        <td>
+                            Describes the primary type or category of crime recorded in the dataset.
+                        </td>
+                        <td>
+                            Pairplots illustrate regular patterns in primary crime types, with outliers removed for a more balanced view.
+                        </td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Removal Details</h3>
+            <p>Key insights after removing outliers include:</p>
+            
+            <ul>
+                <li>
+                    <strong>IUCR:</strong> The exclusion of outliers allows for a more accurate representation of typical crime types and their relationships.
+                </li>
+                <li>
+                    <strong>Primary:</strong> Pairplots without outliers reflect a more consistent view of primary crime categories.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix Explanation</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Confusion Matrix Explanation</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='urban_metrix.png') }}" alt="Confusion Matrix">
+
+        <div class="summary">
+            <h2>Explanation</h2>
+            <p>The confusion matrix visually represents how well a classification model is performing by comparing predicted values with actual values. It consists of:</p>
+            <ul>
+                <li><strong>Diagonal entries:</strong> These represent correctly classified instances for each sound category (e.g., Silence, Noise, Music).</li>
+                <li><strong>Off-diagonal entries:</strong> These represent misclassifications, where a model predicts one category but the true label belongs to a different category.</li>
+                <li><strong>Random Forest:</strong> Exhibits the most accurate predictions, with the least number of misclassifications.</li>
+            </ul>
+            <p><strong>Conclusion:</strong> Random Forest provides the highest accuracy and is the most reliable model for the urban sound classification dataset. Logistic Regression and Decision Tree also perform well but have slightly higher misclassification rates.</p>
+        </div>
+    </div>
+</body>
+</html>

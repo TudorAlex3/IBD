@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Analysis Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Series Analysis Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='time_series.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Time Series Analysis dataset contains hourly records of a count variable. The dataset is useful for time series analysis, where the goal is to forecast future counts based on past trends. The dataset contains entries for multiple days, and the key information for each record is the timestamp and the associated count value. It is suitable for applications involving trend analysis, seasonality detection, and forecasting.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+                ['0', '25-08-2012 00:00', '8']
+                ['1', '25-08-2012 01:00', '2']
+                ['2', '25-08-2012 02:00', '6']
+                ['3', '25-08-2012 03:00', '2']
+                ['4', '25-08-2012 04:00', '2']
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>ID</strong>: Unique identifier for each record.</li>
+                <li><strong>Datetime</strong>: Timestamp indicating the date and time of the record.</li>
+                <li><strong>Count</strong>: The value being recorded, which could represent any time-dependent quantity (e.g., traffic count, sales count, etc.).</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Time Series dataset consists of hourly records of a count variable over multiple days. It is useful for forecasting and identifying patterns in the data over time. The dataset contains 3 columns:</p>
+            <ul>
+                <li><strong>ID</strong>: Unique identifier for each row in the dataset.</li>
+                <li><strong>Datetime</strong>: The timestamp of when the data was recorded, in the format 'DD-MM-YYYY HH:MM'.</li>
+                <li><strong>Count</strong>: The number of occurrences recorded at that specific time (e.g., traffic count, sales count).</li>
+            </ul>
+            <p>This dataset can be used for time series forecasting techniques, such as ARIMA, Exponential Smoothing, or LSTM (Long Short-Term Memory) models.</p>
+        </div>
+    </div>
+</body>
+</html>

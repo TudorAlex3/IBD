@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>COVID-19 Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for Confirmed Cases -->
+            <img src="{{ url_for('static', filename='covid_scatter_Confirmed.png') }}" alt="Confirmed Cases Scatter Plot">
+            <!-- Scatter plot for Deaths -->
+            <img src="{{ url_for('static', filename='covid_scatter_Deaths.png') }}" alt="Deaths Scatter Plot">
+            <!-- Scatter plot for Recovered -->
+            <img src="{{ url_for('static', filename='covid_scatter_Recovered.png') }}" alt="Recovered Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides a detailed analysis of the COVID-19 dataset using scatter plots, focusing on key numerical variables and their relationships.
+                These visualizations help in understanding the spread and recovery of COVID-19, as well as mortality rates across different regions or time periods.
+            </p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Confirmed Cases</td>
+                        <td>
+                            Number of confirmed COVID-19 cases.
+                        </td>
+                        <td>
+                            Certain regions or periods show significantly higher numbers of confirmed cases, indicating outbreaks or high transmission rates.
+                        </td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Deaths</td>
+                        <td>
+                            Number of deaths due to COVID-19.
+                        </td>
+                        <td>
+                            High death rates in some regions indicate severe impact, with occasional spikes suggesting outliers in mortality data.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>Recovered</td>
+                        <td>
+                            Number of people who have recovered from COVID-19.
+                        </td>
+                        <td>
+                            Variability in recovery rates, with some regions showing higher recovery counts compared to others.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Below are some notable observations based on the scatter plots:</p>
+            <ul>
+                <li>
+                    <strong>Confirmed Cases:</strong> Areas with unusually high numbers of confirmed cases suggest outbreak hotspots or regions with intensive testing.
+                </li>
+                <li>
+                    <strong>Deaths:</strong> High mortality regions show significant spikes, highlighting severe impacts in specific locations.
+                </li>
+                <li>
+                    <strong>Recovered:</strong> Recovery scatter plots show regions with rapid recovery rates, while some areas indicate slower recovery trends.
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

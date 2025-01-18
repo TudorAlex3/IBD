@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Black Friday Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='black_outliers_id.png') }}" alt="Application Outliers Included">
+        </div>
+        
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis examines the Black Friday sales dataset, with a particular focus on identifying and retaining outliers. Outliers are values that significantly differ from other observations in the dataset and may indicate unusual sales events, promotional strategies, or customer behaviors. By keeping these outliers, we gain a broader understanding of the extremes within the data, which might represent either errors or rare, significant events that impact sales patterns during Black Friday.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product_Category_1</td>
+                        <td>
+                            This metric represents the sales volume for products in the first category. Outliers can reflect either product-specific anomalies or store-wide sales promotions.
+                        </td>
+                        <td>
+                            Significant outliers reveal a few products in this category with unusually high sales, possibly driven by limited-time offers, bulk purchases, or targeted discounts.
+                        </td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>Product_Category_3</td>
+                        <td>
+                            Represents the sales data for the third product category, which can vary in performance across different outlets. Outliers here may point to rare promotional activities or high-value customer transactions.
+                        </td>
+                        <td>
+                            Outliers in this category include high-value transactions that deviate from the usual sales trends. These may indicate highly successful promotions or the purchase of multiple items in a single transaction.
+                        </td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase Amount</td>
+                        <td>
+                            This represents the total spending amount per customer during Black Friday. Outliers are indicative of extreme purchasing behavior.
+                        </td>
+                        <td>
+                            Outliers include both unusually high-value purchases that could reflect big-ticket items or errors in data entry. Some transactions are exceptionally large, hinting at either luxury goods sales or data inconsistencies.
+                        </td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Here are some of the most notable outlier observations from the dataset:</p>
+            
+            <ul>
+                <li>
+                    <strong>Product_Category_1:</strong> Outliers include records like <code>Product_ID XDF08</code> and <code>OUT050</code>, where sales spikes can be attributed to promotional discounts or holiday sales.
+                </li>
+                <li>
+                    <strong>Product_Category_3:</strong> Products such as <code>Product_ID ZHI33</code> reflect extraordinary sales figures, likely driven by successful marketing or product scarcity.
+                </li>
+                <li>
+                    <strong>Purchase Amount:</strong> High-spending customers like <code>Customer_ID A1234</code> reflect a purchase amount well above typical behavior, which might indicate bulk purchases or premium product acquisitions.
+                </li>
+            </ul>
+        </div>
+        
+
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

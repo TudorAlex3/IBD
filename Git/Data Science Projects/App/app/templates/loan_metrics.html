@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Metrics Comparison</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Metrics Comparison</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='loan_metrics.png') }}" alt="Model Metrics">
+        <div class="summary">
+            <h2>Classification Report for Logistic Regression</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.95      0.42      0.58        43
+                1       0.76      0.99      0.86        80
+     
+         accuracy                           0.79       123
+        macro avg       0.85      0.70      0.72       123
+     weighted avg       0.83      0.79      0.76       123
+            </pre>
+
+            <h2>Classification Report for Decision Tree</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.60      0.58      0.59        43
+                1       0.78      0.79      0.78        80
+     
+         accuracy                           0.72       123
+        macro avg       0.69      0.68      0.69       123
+     weighted avg       0.71      0.72      0.71       123
+            </pre>
+
+            <h2>Classification Report for Random Forest</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.90      0.42      0.57        43
+                1       0.76      0.97      0.85        80
+     
+         accuracy                           0.78       123
+        macro avg       0.83      0.70      0.71       123
+     weighted avg       0.81      0.78      0.75       123
+            </pre>
+
+            <h2>Explanation</h2>
+    <p>The dataset consists of a binary classification problem, where the goal is to predict whether an applicant will get a loan (class 1) or not (class 0). The three models evaluated—Logistic Regression, Decision Tree, and Random Forest—show different performance metrics, reflecting their strengths and weaknesses.</p>
+    <p>The Logistic Regression model exhibits a strong recall for class 1 (0.99), indicating it is highly sensitive in predicting successful loan applications. However, its precision for class 0 is quite low (0.42), meaning that many of the predicted "0" instances are incorrect, leading to a relatively poor balance between precision and recall. The overall accuracy of the model is 0.79, which suggests it performs reasonably well despite the imbalance in precision and recall.</p>
+    <p>The Decision Tree model shows more balanced precision and recall for both classes, with an accuracy of 0.72. The model performs moderately well, but its precision for class 0 is still not ideal (0.60), and its recall for class 1 is not as strong as the other models (0.79). The decision tree might have overfitted to the training data slightly, as reflected in its moderate overall performance.</p>
+    <p>The Random Forest model is a bit more robust than the Decision Tree, with better recall for class 1 (0.97) and relatively high precision (0.76). However, it suffers from a similar issue as the Logistic Regression model in terms of low recall for class 0 (0.42). Overall, it achieves an accuracy of 0.78, indicating solid performance but with room for improvement, particularly in class 0 predictions.</p>
+
+    <h2>Conclusion</h2>
+    <p><strong>Overall Conclusion:</strong> The three models perform fairly well, with Logistic Regression and Random Forest providing higher recall for class 1 (successful loan applicants) but suffering from poor performance in predicting class 0 (unsuccessful applicants). The Decision Tree offers a more balanced approach but does not excel in either class. The overall accuracy across all models is reasonably close, but there is still potential for improvement, especially in precision and recall for class 0. Tuning the models or applying different strategies for handling class imbalance could enhance performance further.</p>
+        </div>
+    </div>
+</body>
+</html>

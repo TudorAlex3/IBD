@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieLens Dataset: Pairplot with Outliers in Genre</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>MovieLens Dataset: Pairplot with Outliers in Genre</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Image for Scatter plot with Genre Outliers -->
+            <img src="{{ url_for('static', filename='movie_outliers_genre.png') }}" alt="Pairplot - Genre Outliers">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Pairplot Analysis: Outliers in Genre Column</h2>
+            <p>
+                The pairplot for the MovieLens dataset includes visual analysis of outliers in the **genre** column. Outliers in this column are crucial for understanding how certain genres are represented disproportionately compared to others, which can impact recommendations and analyses.
+            </p>
+
+            <h3>Outlier Details</h3>
+            <p>
+                Outliers in the **genre** column may represent unusual or underrepresented genres in the dataset. These outliers can indicate inconsistencies, such as incorrect genre classifications or anomalies where a particular genre has a higher or lower frequency than expected.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

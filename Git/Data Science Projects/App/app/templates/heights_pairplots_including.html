@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heights and Weights Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heights and Weights Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='height_outliers_gender.png') }}" alt="Application Outliers Included">
+            
+        </div>
+        
+
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis explores the distribution of the **Gender** column in the **Heights and Weights** dataset, which categorizes individuals as either male or female. The dataset contains height and weight measurements for each gender, and outliers have been identified and retained to provide a more complete picture of the data. By examining these outliers, we can gain insights into unusual cases or discrepancies in the gender distribution and their relationship to height and weight.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            Represents the gender of individuals, categorized as male or female. Gender is a key demographic attribute in many health-related datasets, influencing weight and height trends.
+                        </td>
+                        <td>
+                            Outliers within the **Gender** column might suggest anomalies or rare cases where an individual's gender is recorded incorrectly, or a data entry issue exists. The distribution of height and weight for each gender shows typical trends, though outliers may challenge these assumptions.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Outlier Details</h3>
+            <p>Key findings based on the **Gender** column include the following:</p>
+            
+            <ul>
+                <li>
+                    <strong>Gender Outliers:</strong> Outliers may include records where the gender is incorrectly classified or where gender-related patterns in height and weight deviate significantly from the general trend.
+                </li>
+                <li>
+                    Instances of gender misclassification, such as individuals with a height or weight distribution that doesn't align with their gender category, could be due to data errors or unique cases.
+                </li>
+                <li>
+                    Outliers help identify specific cases where gender-based patterns in the dataset might differ from typical expectations, leading to deeper insights into data quality or individual variation.
+                </li>
+            </ul>
+        </div>
+        
+
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

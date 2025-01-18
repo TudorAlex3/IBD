@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigMart Sales Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BigMart Sales Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='bigmart_sales.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>{{ description.text }}</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+<pre>
+['FDA15', 'Dairy', 'Low Fat', 9.3, 0.016047, 249.8092, 'OUT049', 'Supermarket Type1', 'Tier 1', 1999, 3735.138]
+['DRC01', 'Soft Drinks', 'Regular', 5.92, 0.019278, 48.2692, 'OUT018', 'Supermarket Type2', 'Tier 3', 2009, 443.4228]
+['FDN15', 'Meat', 'Low Fat', 17.5, 0.016760, 141.618, 'OUT049', 'Supermarket Type1', 'Tier 1', 1999, 2097.27]
+['FDX20', 'Household', 'Regular', 19.2, 0.000000, 182.095, 'OUT010', 'Grocery Store', 'Tier 3', 1998, 732.38]
+['NCD19', 'Household', 'Low Fat', 8.93, 0.000000, 53.8614, 'OUT013', 'Supermarket Type1', 'Tier 3', 1987, 994.7052]
+</pre>
+
+
+            <h2>Columns</h2>
+            <ul>
+                {% for column in description.columns %}
+                    <li>{{ column }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The BigMart Sales dataset contains 8,523 rows and 11 columns. Each row represents a product at a particular store, with various attributes such as:</p>
+            <ul>
+                <li><strong>Item_Identifier</strong>: Unique identifier for each product.</li>
+                <li><strong>Item_Type</strong>: The category of the product (e.g., Dairy, Soft Drinks, Meat).</li>
+                <li><strong>Item_Fat_Content</strong>: Indicates the fat content of the product (Low Fat, Regular).</li>
+                <li><strong>Item_Weight</strong>: The weight of the product in kilograms.</li>
+                <li><strong>Item_Visibility</strong>: The percentage visibility of the product in the store.</li>
+                <li><strong>Item_MRP</strong>: The maximum retail price (MRP) of the product.</li>
+                <li><strong>Outlet_Identifier</strong>: Unique identifier for the store where the product is sold.</li>
+                <li><strong>Outlet_Type</strong>: The type of the store (e.g., Supermarket, Grocery Store).</li>
+                <li><strong>Outlet_Location_Type</strong>: Indicates the store's location type (Tier 1, Tier 2, Tier 3).</li>
+                <li><strong>Outlet_Establishment_Year</strong>: The year the store was established.</li>
+                <li><strong>Item_Outlet_Sales</strong>: The total sales of the product in the store (target variable).</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

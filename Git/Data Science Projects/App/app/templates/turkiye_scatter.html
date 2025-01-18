@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkiye Student Evaluation Scatter Plots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Turkiye Student Evaluation Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='turkiye_scatter_nb.repeat.png') }}" alt="Item Outlet Scatter Plot">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q14.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q15.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q17.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q19.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q20.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q21.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q22.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q25.png') }}" alt="Item Visibility Scatter Plot">
+            <img src="{{ url_for('static', filename='turkiye_scatter_Q28.png') }}" alt="Item Visibility Scatter Plot">
+        </div>
+
+        <!-- Summary Section -->
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report explores patterns and anomalies in the **Turkiye Student Evaluation Dataset** through scatter plots. The analysis focuses on student feedback for various survey questions, highlighting relationships, distributions, and outliers across responses.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number of Repeats</td>
+                        <td>
+                            Indicates how often students repeated certain behaviors during evaluations.
+                        </td>
+                        <td>
+                            Responses show clustering around typical frequencies, but a few instances of excessively high values indicate outliers, possibly due to outliers in specific question categories.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Survey Question Q14</td>
+                        <td>
+                            Measures agreement on a specific criterion (e.g., clarity of teaching).
+                        </td>
+                        <td>
+                            Strong positive responses dominate, though a few responses deviate significantly, suggesting potential reporting inconsistencies.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Survey Question Q20</td>
+                        <td>
+                            Evaluates satisfaction with available facilities during the course.
+                        </td>
+                        <td>
+                            Outliers show some extreme dissatisfaction or unusually high satisfaction that could be indicative of facility-specific feedback.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Key insights derived from the scatter plots include the following:</p>
+            
+            <ul>
+                <li>
+                    <strong>Number of Repeats:</strong> Outliers represent students who repeated evaluation behavior unusually frequently, particularly in items related to course engagement (<code>Q19</code> and <code>Q21</code>).
+                </li>
+                <li>
+                    <strong>Q14:</strong> Several extreme negative responses were observed, possibly indicating isolated dissatisfaction events that warrant further investigation.
+                </li>
+                <li>
+                    <strong>Q20:</strong> Outliers reflect highly polarized feedback on facilities, suggesting these responses may vary by specific class or lab conditions.
+                </li>
+            </ul>
+        </div>
+        
+
+</body>
+</html>

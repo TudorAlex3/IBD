@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Basket Analysis Pairplots with Outliers (Country)</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Market Basket Analysis Pairplots with Outliers (Country)</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for different aspects including Country -->
+            <img src="{{ url_for('static', filename='market_outliers_Country.png') }}" alt="Market Basket Analysis Pairplot for Country">
+            
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis examines the relationships between different basket items and their distribution across various countries in the Market Basket Analysis dataset. The pairplots provide insights into patterns, correlations, and outliers for the "Country" column.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Country</td>
+                        <td>
+                            Represents the geographical region or country of the transaction.
+                        </td>
+                        <td>
+                            The pairplot highlights relationships between country-specific item distributions, showcasing outliers where specific countries exhibit unusual buying patterns or preferences.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Item Frequency</td>
+                        <td>
+                            Frequency of items purchased within a specific country.
+                        </td>
+                        <td>
+                            Outliers in the frequency of items purchased suggest regions with unique shopping behaviors or preferences.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Amount</td>
+                        <td>
+                            Indicates the average monetary value of transactions within a country.
+                        </td>
+                        <td>
+                            Pairplots reveal outliers with higher transaction amounts, particularly in regions with luxury or premium purchases.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Key insights from the pairplots include:</p>
+            
+            <ul>
+                <li>
+                    <strong>Country:</strong> Outliers in the "Country" column indicate regions where item distributions deviate from global trends, potentially reflecting cultural or economic differences.
+                </li>
+                <li>
+                    <strong>Item Frequency:</strong> High-frequency outliers show regions with a concentrated selection of specific items.
+                </li>
+                <li>
+                    <strong>Transaction Amount:</strong> Elevated transaction amounts in specific countries highlight regions with distinct purchasing behaviors.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

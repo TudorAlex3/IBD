@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigmart Sales Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='bigmart_outliers_establishment.png') }}" alt="Application Outliers Included">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='bigmart_outliers_fat.png') }}" alt="Coapplicant Outliers Included">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='bigmart_outliers_identif.png') }}" alt="Loan Dependents Outliers Included">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='bigmart_outliers_location.png') }}" alt="Loan Education Outliers Included">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='bigmart_outliers_mrp.png') }}" alt="Loan Gender Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_outliers_sales.png') }}" alt="Loan Married Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_outliers_size.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_outliers_type.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_outliers_typeoutlet.png') }}" alt="Loan Self Employed Outliers Included">
+            <img src="{{ url_for('static', filename='bigmart_outliers_visibility.png') }}" alt="Loan Self Employed Outliers Included">
+        </div>
+        
+
+        <!-- Summary Section -->
+        <!-- Summary Section -->
+<div class="summary">
+    <h2>Data Analysis Summary</h2>
+    <p>
+        This analysis provides insights into BigMart sales data, focusing on key metrics while including outliers. Outliers, which are data points that deviate significantly from general trends, have been retained to better understand the full dataset. These outliers may reveal unique patterns or potential data issues.
+    </p>
+    
+    <table class="summary-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Description</th>
+                <th>Key Observations</th>
+                <th>Outliers (Count)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item_Outlet_Sales</td>
+                <td>
+                    Represents the total sales of products across outlets. This metric provides insights into product performance and store revenue.
+                </td>
+                <td>
+                    Outliers include exceptionally high sales values, possibly due to promotional events or bulk purchases.
+                </td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Item_Visibility</td>
+                <td>
+                    Indicates the visibility of products in stores. While higher visibility generally correlates with higher sales, some outliers suggest other influencing factors.
+                </td>
+                <td>
+                    Products with low visibility but high sales are notable outliers, suggesting factors like brand loyalty or strong demand.
+                </td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Item_MRP</td>
+                <td>
+                    Represents the maximum retail price (MRP) of products. This metric is critical for analyzing sales trends based on pricing.
+                </td>
+                <td>
+                    Outliers with extremely high MRPs indicate premium products or data anomalies that could skew average sales metrics.
+                </td>
+                <td>15</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Outlier Details</h3>
+    <p>Below are some notable observations with outliers included in the dataset:</p>
+    
+    <ul>
+        <li>
+            <strong>Item_Outlet_Sales:</strong> High sales outliers include records like <code>OUT017</code> and <code>Item_Identifier FDS23</code>. These values could be influenced by seasonal trends or specific outlet promotions.
+        </li>
+        <li>
+            <strong>Item_Visibility:</strong> Products such as <code>Item_Identifier DRD12</code> have low visibility but high sales, potentially driven by customer demand or product quality.
+        </li>
+        <li>
+            <strong>Item_MRP:</strong> Premium-priced items, including <code>Item_Identifier NCN55</code>, stand out with high sales despite a niche target audience.
+        </li>
+    </ul>
+</div>
+
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histograms for Numerical Columns</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Histograms for Numerical Columns</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='height_histograms.png') }}" alt="Histograms of Heights and Weights Dataset">
+        <div class="summary">
+            <h2>Data Summary</h2>
+            <p><strong>Dataset Information:</strong> The Heights and Weights dataset contains height and weight measurements for individuals categorized by gender:</p>
+            <ul>
+                <li><strong>Gender:</strong> Categorical (Male, Female)</li>
+                <li><strong>Height:</strong> Numerical, measured in inches</li>
+                <li><strong>Weight:</strong> Numerical, measured in pounds</li>
+            </ul>
+            <h2>Data Description</h2>
+            <pre>
+                count      mean       std        min        25%        50%        75%        max
+Height (in)   25,000   69.024   2.878    58.406     67.174     69.0      71.0      78.998
+Weight (lbs)  25,000  172.043  29.828   112.992    154.316    171.9     189.9     269.99
+            </pre>
+            <h2>Explanation of Histograms</h2>
+            <p>The histograms show the distribution of the numerical features (height and weight) in the dataset. Key observations:</p>
+            <ul>
+                <li><strong>Height:</strong> The height distribution follows a normal distribution with most values between 67 and 71 inches.</li>
+                <li><strong>Weight:</strong> The weight distribution is slightly skewed, with most individuals weighing between 150 and 190 pounds.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

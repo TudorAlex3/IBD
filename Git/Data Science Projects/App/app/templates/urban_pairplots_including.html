@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Sound Classification Pairplots with Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Urban Sound Classification Pairplots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for class, classID, fols, salience -->
+            <img src="{{ url_for('static', filename='urban_outliers_class.png') }}" alt="Urban Sound Pairplot">
+            <img src="{{ url_for('static', filename='urban_outliers_classID.png') }}" alt="Urban Sound Pairplot">
+            <img src="{{ url_for('static', filename='urban_outliers_fold.png') }}" alt="Urban Sound Pairplot">
+            <img src="{{ url_for('static', filename='urban_outliers_salience.png') }}" alt="Urban Sound Pairplot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis examines the relationships between key columns: **class**, **classID**, **fols**, and **salience** in the Urban Sound Classification dataset. The pairplots show patterns, correlations, and outliers in these variables, helping to identify unusual or distinctive observations.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class</td>
+                        <td>
+                            Represents the type or category of sound (e.g., traffic, pedestrian noise).
+                        </td>
+                        <td>
+                            The pairplot highlights clustering patterns but also showcases outliers where certain sound classes deviate significantly from expected distributions.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>ClassID</td>
+                        <td>
+                            A unique identifier for different classes of urban sounds.
+                        </td>
+                        <td>
+                            Pairplots reveal distinct clusters for various ClassIDs, with outliers indicating rare or atypical occurrences.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Fols</td>
+                        <td>
+                            Represents the frequency or occurrence of a particular sound.
+                        </td>
+                        <td>
+                            Outliers in the **fols** column suggest instances of unusually high or low sound frequencies, which might require deeper analysis.
+                        </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Salience</td>
+                        <td>
+                            Indicates the prominence or importance of a sound within the dataset.
+                        </td>
+                        <td>
+                            Pairplots show a mix of prominent and less salient sounds, with outliers reflecting extreme values that deviate from general expectations.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Key insights from the pairplots include:</p>
+            
+            <ul>
+                <li>
+                    <strong>Class:</strong> Outliers represent instances where certain sound classes, like industrial noise, deviate significantly from typical patterns.
+                </li>
+                <li>
+                    <strong>ClassID:</strong> Rare or atypical ClassIDs reflect unique instances of sound classifications that don't follow general distribution trends.
+                </li>
+                <li>
+                    <strong>Fols:</strong> Extreme frequencies, evident through outliers, highlight unusual peaks in sound occurrences that merit further exploration.
+                </li>
+                <li>
+                    <strong>Salience:</strong> Prominent outliers showcase sounds that are either extremely important or less significant compared to other data points.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

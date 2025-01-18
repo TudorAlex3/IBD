@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix - Churn Dataset</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            line-height: 1.8;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confusion Matrix - Churn Dataset</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='chrun_metrix.png') }}" alt="Confusion Matrix for Churn Prediction">
+
+        <div class="summary">
+            <h2>Confusion Matrix Details</h2>
+            <pre>
+                Rows: Actual (Ground Truth)
+                Columns: Predicted
+                - True Negatives (TN): Cases correctly predicted as not churned.
+                - False Positives (FP): Cases incorrectly predicted as churned.
+                - False Negatives (FN): Cases incorrectly predicted as not churned.
+                - True Positives (TP): Cases correctly predicted as churned.
+            </pre>
+
+            <h2>Model-Specific Insights</h2>
+            <ul>
+                <li>
+                    <strong>Logistic Regression:</strong> Displays a well-distributed classification with balanced precision and recall. False positives are minimal, ensuring fewer unnecessary alerts for churn.
+                </li>
+                <li>
+                    <strong>Decision Tree:</strong> Captures the majority of true positives but may overfit the training data, leading to slightly higher false positives.
+                </li>
+                <li>
+                    <strong>Random Forest:</strong> Delivers the most accurate results with fewer false positives and negatives, owing to its ensemble approach.
+                </li>
+            </ul>
+
+            <h2>Analysis Summary</h2>
+            <p>The confusion matrices highlight the ability of the models to distinguish between churn and non-churn cases. The trade-offs between precision and recall are apparent in each model:</p>
+            <ul>
+                <li>
+                    <strong>Random Forest:</strong> Ideal for datasets with complex patterns, offering consistent and robust predictions.
+                </li>
+                <li>
+                    <strong>Logistic Regression:</strong> Effective as a baseline model, especially when interpretability is crucial.
+                </li>
+                <li>
+                    <strong>Decision Tree:</strong> Provides clarity in decision-making but requires careful tuning to avoid overfitting.
+                </li>
+            </ul>
+
+            <p><strong>Conclusion:</strong> Random Forest emerges as the top-performing model for churn prediction, balancing accuracy and generalizability.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Analysis Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Series Analysis Dataset Description</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='time_histograms.png') }}" alt="Histogram of Time Series Dataset">
+        <div class="summary">
+            <h2>Dataset Information</h2>
+            <p>This dataset contains time series data for analyzing patterns, trends, and forecasts over time. It includes hourly measurements, with each data point representing a count or a similar metric collected at specific intervals.</p>
+
+            <h2>Data Description</h2>
+            <pre>
+Datetime                  Count
+25-08-2012 00:00          8
+25-08-2012 01:00          2
+25-08-2012 02:00          6
+25-08-2012 03:00          2
+25-08-2012 04:00          2
+25-08-2012 05:00          2
+25-08-2012 06:00          2
+25-08-2012 07:00          2
+25-08-2012 08:00          6
+25-08-2012 09:00          2
+25-08-2012 10:00          2
+25-08-2012 11:00          6
+25-08-2012 12:00          4
+25-08-2012 13:00          2
+25-08-2012 14:00          6
+25-08-2012 15:00          2
+25-08-2012 16:00          2
+25-08-2012 17:00          2
+25-08-2012 18:00          2
+25-08-2012 19:00          2
+25-08-2012 20:00          2
+25-08-2012 21:00          6
+25-08-2012 22:00          2
+25-08-2012 23:00          2
+26-08-2012 00:00          4
+26-08-2012 01:00          6
+26-08-2012 02:00          2
+26-08-2012 03:00          4
+26-08-2012 04:00          2
+26-08-2012 05:00          2
+            </pre>
+
+            <h2>Column Details</h2>
+            <ul>
+                <li><strong>Datetime:</strong> The timestamp representing the date and time of the data point (Datetime, 100% unique).</li>
+                <li><strong>Count:</strong> The value or metric recorded for the time point (Numerical, 31 unique values).</li>
+            </ul>
+
+            <h2>Histogram Insights</h2>
+            <p>The histogram above represents the distribution of the "Count" values across various time periods. It helps in identifying trends, seasonal patterns, and irregularities in the data. From the histogram, we can observe:</p>
+            <ul>
+                <li>Certain time periods, like early morning and late evening, tend to have lower counts.</li>
+                <li>There are peaks during specific hours of the day, suggesting recurring trends.</li>
+            </ul>
+
+            <h2>Handling Missing Values</h2>
+            <p>In this dataset, missing values may be handled by interpolation or removal based on the analysis objectives. However, this dataset doesn't seem to contain significant missing data based on its structure.</p>
+
+            <h2>Key Insights</h2>
+            <p>Some possible analyses based on this time series data include:</p>
+            <ul>
+                <li>Time-dependent patterns such as peaks during certain hours.</li>
+                <li>Seasonal variations and periodic trends.</li>
+                <li>Using this data for forecasting future counts based on observed trends.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

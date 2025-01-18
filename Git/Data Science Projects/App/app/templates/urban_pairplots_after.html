@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Sound Classification Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Urban Sound Classification Pairplots After Removing Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplot for class, classID, fols, salience -->
+            <img src="{{ url_for('static', filename='urban_removed_outliers_class.png') }}" alt="Class Outliers Removed">
+            <img src="{{ url_for('static', filename='urban_removed_outliers_classID.png') }}" alt="ClassID Outliers Removed">
+            <img src="{{ url_for('static', filename='urban_removed_outliers_fold.png') }}" alt="Fols Outliers Removed">
+            <img src="{{ url_for('static', filename='urban_removed_outliers_salience.png') }}" alt="Salience Outliers Removed">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Post-Outlier Removal Summary</h2>
+            <p>
+                After removing outliers from the Urban Sound Classification dataset, the pairplots provide a more refined view of the relationships between the variables: **class**, **classID**, **fols**, and **salience**. The removal of extreme values helps reveal more typical patterns and improves the interpretability of these visualizations.
+            </p>
+            
+            <h3>Key Insights Post-Outlier Removal</h3>
+            <ul>
+                <li>
+                    <strong>Class:</strong> 
+                    Removing outliers has clarified the distribution of sound classes. The pairplot now reflects a more balanced and typical spread of sound categories, allowing for better identification of patterns within common sound types.
+                </li>
+                <li>
+                    <strong>ClassID:</strong> 
+                    With outliers removed, the distribution of ClassIDs shows a more normalized clustering. Extreme ClassID values that previously skewed the analysis have been filtered, enhancing the clarity of relationships.
+                </li>
+                <li>
+                    <strong>Fols:</strong> 
+                    Post-outlier removal, the distribution of frequency occurrences (fols) appears more consistent. Unusual peaks and troughs have been reduced, enabling more accurate observations of sound frequencies.
+                </li>
+                <li>
+                    <strong>Salience:</strong> 
+                    The pairplot for salience highlights a more typical range of prominence for sounds. Extreme salience values have been removed, making the visualization more representative of general data trends.
+                </li>
+            </ul>
+        
+            <h3>Improved Visual Insights</h3>
+            <ul>
+                <li>
+                    <strong>Class vs Salience:</strong> 
+                    The scatter plot shows a smoother relationship between sound classes and salience levels, where typical trends can be more easily observed without the influence of outliers.
+                </li>
+                <li>
+                    <strong>ClassID vs Fols:</strong> 
+                    The cleaned dataset emphasizes more consistent and normal distributions of sound occurrences for various ClassIDs, eliminating rare and extreme values.
+                </li>
+            </ul>
+        
+            <p>
+                By removing outliers, the pairplots provide a more realistic representation of the underlying data. This refinement enhances the ability to draw meaningful conclusions and supports more accurate predictive modeling for urban sound classification.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

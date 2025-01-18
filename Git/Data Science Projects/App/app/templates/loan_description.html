@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='loan_data.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>{{ description.text }}</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+                ['LP001002', 'Male', 'No', 0, 'Graduate', 'No', 5849, 0, None, 360, 1, 'Urban', 'Y']
+                ['LP001003', 'Male', 'Yes', 1, 'Graduate', 'No', 4583, 1508, 128, 360, 1, 'Rural', 'N']
+                ['LP001005', 'Male', 'Yes', 0, 'Graduate', 'Yes', 3000, 0, 66, 360, 1, 'Urban', 'Y']
+                ['LP001006', 'Male', 'Yes', 0, 'Not Graduate', 'No', 2583, 2358, 120, 360, 1, 'Urban', 'Y']
+                ['LP001008', 'Male', 'No', 0, 'Graduate', 'No', 6000, 0, 141, 360, 1, 'Urban', 'Y']
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                {% for column in description.columns %}
+                    <li>{{ column }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Loan dataset contains 615 rows and 13 columns. Each row represents a loan application, with various attributes such as:</p>
+            <ul>
+                <li><strong>Loan_ID</strong>: Unique identifier for each loan application.</li>
+                <li><strong>Gender</strong>: Gender of the applicant (Male/Female).</li>
+                <li><strong>Married</strong>: Marital status of the applicant (Yes/No).</li>
+                <li><strong>Dependents</strong>: Number of dependents of the applicant.</li>
+                <li><strong>Education</strong>: Education level of the applicant (Graduate/Not Graduate).</li>
+                <li><strong>Self_Employed</strong>: Whether the applicant is self-employed (Yes/No).</li>
+                <li><strong>ApplicantIncome</strong>: The income of the applicant.</li>
+                <li><strong>CoapplicantIncome</strong>: The income of the coapplicant (if any).</li>
+                <li><strong>LoanAmount</strong>: The amount of the loan requested.</li>
+                <li><strong>Loan_Amount_Term</strong>: The term of the loan in months (e.g., 360 months).</li>
+                <li><strong>Credit_History</strong>: Whether the applicant has a credit history (1 = Yes, 0 = No).</li>
+                <li><strong>Property_Area</strong>: The type of property area (Urban, Semiurban, Rural).</li>
+                <li><strong>Loan_Status</strong>: The target variable indicating whether the loan was approved (Y) or denied (N).</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieLens Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MovieLens Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='movie_lens.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The MovieLens dataset contains information about movies, including Movie ID, Movie Name, and Genre. This dataset can be utilized for various analyses such as movie recommendation systems, genre analysis, and user preferences.</p>
+
+            <h2>Sample Data (First 5 Entries)</h2>
+            <pre>
+MovieID,MovieName,Genre
+1,Toy Story (1995),Animation|Children's|Comedy
+2,Jumanji (1995),Adventure|Children's|Fantasy
+3,Grumpier Old Men (1995),Comedy|Romance
+4,Waiting to Exhale (1995),Comedy|Drama
+5,Father of the Bride Part II (1995),Comedy
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>MovieID</strong>: Unique identifier for each movie.</li>
+                <li><strong>MovieName</strong>: Name of the movie.</li>
+                <li><strong>Genre</strong>: Genre(s) associated with the movie.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset is widely used in movie data analysis, recommendation systems, and insights into movie trends based on genre and popularity.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heights and Weights Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heights and Weights Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='weight-height.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>This dataset contains information about individuals' heights and weights, categorized by gender. It includes the heights and weights of both male and female individuals, which can be used for analysis of body composition or to create predictive models for health-related research.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+<pre>
+["Male", 73.847017017515, 241.893563180437]
+["Male", 68.7819040458903, 162.310472521300]
+["Male", 74.1101053917849, 212.7408555565]
+["Male", 71.7309784033377, 220.042470303077]
+["Male", 69.8817958611153, 206.349800623871]
+</pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>Gender</strong>: The gender of the individual (e.g., "Male" or "Female").</li>
+                <li><strong>Height</strong>: The height of the individual in inches.</li>
+                <li><strong>Weight</strong>: The weight of the individual in pounds.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Heights and Weights dataset contains 3 columns: Gender, Height, and Weight. The dataset can be used for studies related to body mass index (BMI), weight predictions, or health analytics, with the gender serving as an important categorical feature.</p>
+        </div>
+    </div>
+</body>
+</html>

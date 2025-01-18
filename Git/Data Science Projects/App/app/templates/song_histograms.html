@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million Songs Dataset - Histograms</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .histogram {
+            flex: 0 0 45%;
+            margin: 10px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .histogram img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Million Songs Dataset - Histograms</h1>
+    <div class="content">
+        <!-- Histograms -->
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms1.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms2.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms3.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms4.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms5.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms6.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms7.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms8.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms9.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms10.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms11.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms12.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms13.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms14.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms15.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms16.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms17.png') }}" alt="Histograms of BigMart Sales Dataset">
+            <img src="{{ url_for('static', filename='histograms18.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <div class="row">
+            <img src="{{ url_for('static', filename='histograms19.png') }}" alt="Histograms of BigMart Sales Dataset">
+        </div>
+        <!-- Explanation Section -->
+        <div style="text-align: left; margin: 40px auto; width: 80%; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h2>Explanation of Histograms</h2>
+            <p>The histograms above represent various attributes of the Million Songs dataset, providing insights into the distributions of song features:</p>
+            <ul>
+                <li><strong>Histogram 1:</strong> Song durations, showing a peak around 200-300 seconds.</li>
+                <li><strong>Histogram 2:</strong> Loudness levels, clustering around -5 to -10 dB.</li>
+                <li><strong>Histogram 3:</strong> Tempo distributions, with most songs between 100-140 BPM.</li>
+                <li><strong>Histogram 4:</strong> Energy levels, commonly in the 0.6-0.8 range.</li>
+                <li><strong>Histogram 5:</strong> Danceability scores, highlighting popular rhythm patterns.</li>
+                <li><strong>Histogram 6:</strong> Acousticness levels, showing variability in instrumentation.</li>
+                <li><strong>Histogram 7:</strong> Valence distributions, capturing emotional positivity.</li>
+                <li><strong>Histogram 8:</strong> Instrumentalness, reflecting the prevalence of non-vocal tracks.</li>
+                <li><strong>Histogram 9:</strong> Speechiness, emphasizing lyrical content in songs.</li>
+                <li><strong>Histogram 10:</strong> Key distributions, showing common musical scales.</li>
+                <li><strong>Histogram 11:</strong> Mode distributions, capturing major/minor tonality.</li>
+                <li><strong>Histogram 12:</strong> Time signature variability, indicating rhythm complexity.</li>
+                <li><strong>Histogram 13:</strong> Song release years, showing temporal trends.</li>
+                <li><strong>Histogram 14:</strong> Popularity metrics, highlighting hit songs.</li>
+                <li><strong>Histogram 15:</strong> Duration per genre, reflecting diversity across genres.</li>
+                <li><strong>Histogram 16:</strong> Loudness per genre, revealing mastering trends.</li>
+                <li><strong>Histogram 17:</strong> Energy per decade, capturing evolving production styles.</li>
+                <li><strong>Histogram 18:</strong> Acousticness per decade, illustrating instrumental trends.</li>
+                <li><strong>Histogram 19:</strong> Danceability per decade, highlighting rhythm preferences over time.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

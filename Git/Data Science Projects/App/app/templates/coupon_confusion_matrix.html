@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix Comparison - Coupon Purchase</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confusion Matrix Comparison - Coupon Purchase</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='cupon_metrix.png') }}" alt="Confusion Matrix">
+        <div class="summary">
+            <h2>Confusion Matrix for Logistic Regression</h2>
+            <pre>
+                Predicted:  
+                - **0**: Represents coupon purchases where no discount is applied.
+                - **1**: Represents coupon purchases where a discount is applied.
+
+                Ground Truth:  
+                - **0**: True cases where no discount was applied.
+                - **1**: True cases where a discount was applied.
+            </pre>
+
+            <h2>Confusion Matrix for Decision Tree</h2>
+            <pre>
+                Predicted:  
+                - **0**: Represents coupon purchases where no discount is applied.
+                - **1**: Represents coupon purchases where a discount is applied.
+
+                Ground Truth:  
+                - **0**: True cases where no discount was applied.
+                - **1**: True cases where a discount was applied.
+            </pre>
+
+            <h2>Confusion Matrix for Random Forest</h2>
+            <pre>
+                Predicted:  
+                - **0**: Represents coupon purchases where no discount is applied.
+                - **1**: Represents coupon purchases where a discount is applied.
+
+                Ground Truth:  
+                - **0**: True cases where no discount was applied.
+                - **1**: True cases where a discount was applied.
+            </pre>
+
+            <h2>Explanation</h2>
+            <p>The confusion matrices above showcase the classification performance for Logistic Regression, Decision Tree, and Random Forest models. Each matrix compares predicted outcomes with actual outcomes (ground truth) for coupon purchases with and without discounts:</p>
+            <ul>
+                <li><strong>Logistic Regression:</strong> Shows a balanced classification where predictions are closely aligned with actual outcomes.</li>
+                <li><strong>Decision Tree:</strong> Provides a clear breakdown of true positives and negatives, with some minor inconsistencies.</li>
+                <li><strong>Random Forest:</strong> Maintains high accuracy, with minimal discrepancies between predicted and actual values.</li>
+            </ul>
+            <p><strong>Conclusion:</strong> All models perform well in distinguishing between coupon purchases with and without discounts, with Random Forest offering the highest accuracy and consistency.</p>
+        </div>
+    </div>
+</body>
+</html>

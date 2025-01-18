@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston Housing Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boston Housing Dataset Description</h1>
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='Boston_Housing.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Boston Housing dataset contains information collected from suburbs of Boston, Massachusetts, and is commonly used for regression tasks. The dataset contains 506 rows and 14 columns, with each row representing a housing unit in a particular suburb. The target variable in this dataset is the median value of owner-occupied homes, indicated by the column 'MEDV'.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+                ['0.00632', '18', '2.31', '0', '0.538', '6.575', '65.2', '4.09', '1', '296', '15.3', '396.9', '4.98', '24']
+                ['0.02731', '0', '7.07', '0', '0.469', '6.421', '78.9', '4.9671', '2', '242', '17.8', '396.9', '9.14', '21.6']
+                ['0.02729', '0', '7.07', '0', '0.469', '7.185', '61.1', '4.9671', '2', '242', '17.8', '392.83', '4.03', '34.7']
+                ['0.03237', '0', '2.18', '0', '0.458', '6.998', '45.8', '6.0622', '3', '222', '18.7', '394.63', '2.94', '33.4']
+                ['0.06905', '0', '2.18', '0', '0.458', '7.147', '54.2', '6.0622', '3', '222', '18.7', '396.9', '5.33', '36.2']
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>CRIM</strong>: Crime rate per capita in the town.</li>
+                <li><strong>ZN</strong>: Proportion of residential land zoned for large lots.</li>
+                <li><strong>INDUS</strong>: Proportion of non-retail business acres per town.</li>
+                <li><strong>CHAS</strong>: Charles River dummy variable (1 if tract bounds river, 0 otherwise).</li>
+                <li><strong>NOX</strong>: Nitrogen oxide concentration (parts per 10 million).</li>
+                <li><strong>RM</strong>: Average number of rooms per dwelling.</li>
+                <li><strong>AGE</strong>: Proportion of owner-occupied units built before 1940.</li>
+                <li><strong>DIS</strong>: Weighted distance to employment centers.</li>
+                <li><strong>RAD</strong>: Index of accessibility to radial highways.</li>
+                <li><strong>TAX</strong>: Property tax rate per $10,000.</li>
+                <li><strong>PTRATIO</strong>: Pupil-teacher ratio by town.</li>
+                <li><strong>B</strong>: Proportion of residents of African American descent.</li>
+                <li><strong>LSTAT</strong>: Percentage of lower status population.</li>
+                <li><strong>MEDV</strong>: Median value of owner-occupied homes (target variable).</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The Boston Housing dataset is often used in regression analysis to predict the value of homes in various Boston suburbs based on various features such as crime rate, proximity to employment centers, and other socio-economic factors. It consists of 506 samples with 13 features and one target variable, 'MEDV', which indicates the median value of homes in $1,000s.</p>
+            <p><strong>Target variable:</strong> 'MEDV' is the continuous value that we aim to predict based on the features provided.</p>
+        </div>
+    </div>
+</body>
+</html>

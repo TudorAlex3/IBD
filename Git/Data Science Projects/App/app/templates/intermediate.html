@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Level</title>
+    <style>
+        body {
+            background-color: #cce7ff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #555;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            width: 250px;
+            height: 150px;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .back-btn {
+            background-color: #4CAF50;
+            padding: 15px 30px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card:nth-child(1) { background: linear-gradient(135deg, #ffafbd, #ffc3a0); }
+        .card:nth-child(2) { background: linear-gradient(135deg, #2193b0, #6dd5ed); }
+        .card:nth-child(3) { background: linear-gradient(135deg, #cc2b5e, #753a88); }
+        .card:nth-child(4) { background: linear-gradient(135deg, #de6262, #ffb88c); }
+        .card:nth-child(5) { background: linear-gradient(135deg, #06beb6, #48b1bf); }
+        .card:nth-child(6) { background: linear-gradient(135deg, #eb5757, #000000); }
+        .card:nth-child(7) { background: linear-gradient(135deg, #43cea2, #185a9d); }
+        .card:nth-child(8) { background: linear-gradient(135deg, #f4d03f, #16a085); }
+        
+        /* Style for the search bar */
+        #search {
+            padding: 10px;
+            width: 50%;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Intermediate-Level Machine Learning Projects</h1>
+
+    <!-- Search Bar -->
+    <div>
+        <input type="text" id="search" placeholder="Search for a project..." onkeyup="searchProjects()">
+    </div>
+
+    <div class="container">
+        <a href="/black" class="card" data-name="Black Friday Dataset" onclick="setModel('Black Friday Dataset')">9. Black Friday Dataset</a>
+        <a href="/human" class="card" data-name="Human Activity Recognition Dataset" onclick="setModel('Human Activity Recognition Dataset')">10. Human Activity Recognition Dataset</a>
+        <a href="/coupon" class="card" data-name="Coupon Purchase Dataset" onclick="setModel('Coupon Purchase Dataset')">11. Coupon Purchase Dataset</a>
+        <a href="/trip" class="card" data-name="Trip History Dataset" onclick="setModel('Trip History Dataset')">12. Trip History Dataset</a>
+        <a href="/song" class="card" data-name="Million Song Dataset" onclick="setModel('Million Song Dataset')">13. Million Song Dataset</a>
+        <a href="/census" class="card" data-name="Census Income Dataset" onclick="setModel('Census Income Dataset')">14. Census Income Dataset</a>
+        <a href="/movie" class="card" data-name="Movie Lens Dataset" onclick="setModel('Movie Lens Dataset')">15. Movie Lens Dataset</a>
+        <a href="/churn" class="card" data-name="Churn Prediction Dataset" onclick="setModel('Churn Prediction Dataset')">16. Churn Prediction Dataset</a>
+    </div>
+
+    <script>
+        // Store the model name in localStorage when clicked
+        function setModel(model) {
+            localStorage.setItem('lastVisitedModel', model);
+            localStorage.setItem('difficulty', 'Intermediate');
+        }
+
+        // Function to filter projects based on search query
+        function searchProjects() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const projects = document.querySelectorAll('.card');
+            projects.forEach(project => {
+                const title = project.getAttribute('data-name').toLowerCase();
+                project.style.display = title.includes(query) ? '' : 'none';
+            });
+        }
+    </script>
+
+    <div class="center-button-container">
+        <button class="back-btn" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+</body>
+</html>

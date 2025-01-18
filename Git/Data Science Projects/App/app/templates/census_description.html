@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census Income Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Census Income Dataset Description</h1>
+
+    <!-- Download Dataset Button -->
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='adult.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Census Income dataset contains demographic and employment-related data, aiming to predict whether an individual's income exceeds $50K per year based on their attributes. This dataset is commonly used in classification problems and machine learning tasks.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+"age","workclass","fnlwgt","education","education.num","marital.status","occupation","relationship","race","sex","capital.gain",
+"capital.loss","hours.per.week","native.country","income"
+90,"?",77053,"HS-grad",9,"Widowed","?","Not-in-family","White","Female",0,
+4356,40,"United-States","<=50K"
+82,"Private",132870,"HS-grad",9,"Widowed","Exec-managerial","Not-in-family","White","Female",0,
+4356,18,"United-States","<=50K"
+66,"?",186061,"Some-college",10,"Widowed","?","Unmarried","Black","Female",0,
+4356,40,"United-States","<=50K"
+54,"Private",140359,"7th-8th",4,"Divorced","Machine-op-inspct","Unmarried","White","Female",0,
+3900,40,"United-States","<=50K"
+41,"Private",264663,"Some-college",10,"Separated","Prof-specialty","Own-child","White","Female",0,
+3900,40,"United-States","<=50K"
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>age</strong>: Age of the individual.</li>
+                <li><strong>workclass</strong>: Employment class of the individual.</li>
+                <li><strong>fnlwgt</strong>: Final weight, representing the number of people the observation represents.</li>
+                <li><strong>education</strong>: Highest level of education completed.</li>
+                <li><strong>education.num</strong>: Numeric representation of education level.</li>
+                <li><strong>marital.status</strong>: Marital status of the individual.</li>
+                <li><strong>occupation</strong>: Type of occupation.</li>
+                <li><strong>relationship</strong>: Relationship status (e.g., husband, wife, not-in-family).</li>
+                <li><strong>race</strong>: Race of the individual.</li>
+                <li><strong>sex</strong>: Gender of the individual.</li>
+                <li><strong>capital.gain</strong>: Capital gain recorded.</li>
+                <li><strong>capital.loss</strong>: Capital loss recorded.</li>
+                <li><strong>hours.per.week</strong>: Hours worked per week.</li>
+                <li><strong>native.country</strong>: Country of origin.</li>
+                <li><strong>income</strong>: Target variable, indicating whether the individual's income is >$50K or <=$50K.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset is widely used in data science and machine learning to develop classification models that predict income level. It contains 15 columns, with the "income" column serving as the target variable. The data can be analyzed to uncover patterns related to demographics, work habits, and income levels.</p>
+        </div>
+    </div>
+</body>
+</html>

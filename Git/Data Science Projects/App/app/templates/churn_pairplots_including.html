@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Pairplots Including Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Churn Prediction Pairplots Including Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Pairplots for selected columns -->
+            <img src="{{ url_for('static', filename='chrun_outliers_Churn.png') }}" alt="Churn and Dependents Pairplot">
+            <img src="{{ url_for('static', filename='chrun_outliers_Dependents.png') }}" alt="Gender and Partner Pairplot">
+            <img src="{{ url_for('static', filename='chrun_outliers_gender.png') }}" alt="PhoneService and Churn Pairplot">
+            <img src="{{ url_for('static', filename='chrun_outliers_Partner.png') }}" alt="Gender and Partner Pairplot">
+            <img src="{{ url_for('static', filename='chrun_outliers_PhoneService.png') }}" alt="PhoneService and Churn Pairplot">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis highlights relationships between key attributes in the Churn Prediction dataset using pairplots, 
+                focusing on variables such as Churn, Dependents, gender, Partner, and PhoneService. The inclusion of outliers provides valuable insights into anomalies or exceptional behaviors in customer characteristics and churn rates.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Churn</td>
+                        <td>
+                            Indicates whether a customer has churned (Yes/No).
+                        </td>
+                        <td>
+                            Pairplots reveal relationships between churn and other features. Outliers include customers with unexpected behaviors, such as high churn probability despite having long tenures.
+                        </td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>Dependents</td>
+                        <td>
+                            Indicates whether the customer has dependents (Yes/No).
+                        </td>
+                        <td>
+                            Outliers highlight customers with unusual combinations of dependents and churn likelihood, providing insights into household effects on churn.
+                        </td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            Gender of the customer (Male/Female).
+                        </td>
+                        <td>
+                            Pairplots show gender differences in churn and service usage, with outliers suggesting unexpected behaviors or data inconsistencies.
+                        </td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Partner</td>
+                        <td>
+                            Indicates whether the customer has a partner (Yes/No).
+                        </td>
+                        <td>
+                            Outliers represent customers with unique relationships between having a partner and their churn rates, highlighting potential social effects.
+                        </td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>PhoneService</td>
+                        <td>
+                            Indicates whether the customer has a phone service (Yes/No).
+                        </td>
+                        <td>
+                            Outliers reflect customers with unusual patterns of phone service usage and churn, which could indicate service-related issues.
+                        </td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Outlier Details</h3>
+            <p>Key findings from the pairplots include:</p>
+            <ul>
+                <li>
+                    <strong>Churn:</strong> Outliers represent customers with unexpected churn behaviors, such as loyalty despite unfavorable service conditions.
+                </li>
+                <li>
+                    <strong>Dependents:</strong> Unusual patterns of churn among customers with dependents suggest potential impacts of family-related decisions.
+                </li>
+                <li>
+                    <strong>Gender:</strong> Outliers in gender-related pairplots highlight inconsistencies or rare behaviors in churn based on gender.
+                </li>
+                <li>
+                    <strong>Partner:</strong> Customers with unusual churn rates relative to their relationship status provide insights into social influences on service loyalty.
+                </li>
+                <li>
+                    <strong>PhoneService:</strong> Outliers reveal anomalies in the relationship between phone service availability and churn likelihood.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

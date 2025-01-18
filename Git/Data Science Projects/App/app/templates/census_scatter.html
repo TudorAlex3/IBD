@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census Income Dataset Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Census Income Dataset Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <img src="{{ url_for('static', filename='census_scatter_age.png') }}" alt="Scatter Plot of Age">
+            <img src="{{ url_for('static', filename='census_scatter_capital.gain.png') }}" alt="Scatter Plot of Capital Gain">
+            <img src="{{ url_for('static', filename='census_scatter_capital.loss.png') }}" alt="Scatter Plot of Capital Loss">
+            <img src="{{ url_for('static', filename='census_scatter_education.num.png') }}" alt="Scatter Plot of Education Number">
+            <img src="{{ url_for('static', filename='census_scatter_fnlwgt.png') }}" alt="Scatter Plot of Final Weight">
+            <img src="{{ url_for('static', filename='census_scatter_hours.per.week.png') }}" alt="Scatter Plot of Hours per Week">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This report provides insights based on scatter plots of the **Census Income Dataset (Adult CSV)**. The analysis examines relationships among numerical variables, highlights clustering, and identifies outliers.
+            </p>
+
+            <h3>Key Observations</h3>
+            <ul>
+                <li>
+                    <strong>Age:</strong> The age variable shows a strong clustering around the working-age group (20–50 years), with outliers at very high ages likely representing retirees or data errors.
+                </li>
+                <li>
+                    <strong>Capital Gain and Loss:</strong> These variables are heavily skewed, with most values near zero. A small number of extreme values appear as outliers, possibly representing high-income individuals or reporting anomalies.
+                </li>
+                <li>
+                    <strong>Education Number:</strong> Education levels show distinct clusters corresponding to standard educational milestones, such as high school (9–12 years) and college (16+ years). Outliers may represent individuals with exceptional education levels.
+                </li>
+                <li>
+                    <strong>Final Weight (FNLWGT):</strong> This variable shows a wide distribution, with some very high values. These outliers may represent errors or rare demographic groups.
+                </li>
+                <li>
+                    <strong>Hours per Week:</strong> Most individuals work between 30–50 hours per week. Outliers at both ends (very low or very high hours) may represent part-time workers, overworkers, or incorrect entries.
+                </li>
+            </ul>
+
+            <h3>Outlier Analysis</h3>
+            <ul>
+                <li>
+                    <strong>Age:</strong> Outliers are individuals aged 85+ who may represent retirees or inaccuracies.
+                </li>
+                <li>
+                    <strong>Capital Gain and Loss:</strong> Extreme values likely correspond to a small number of high-income earners with significant capital transactions.
+                </li>
+                <li>
+                    <strong>Education Number:</strong> Outliers at the upper end may reflect individuals with unusually high educational attainment.
+                </li>
+                <li>
+                    <strong>Final Weight:</strong> High FNLWGT values might represent demographic weighting anomalies.
+                </li>
+                <li>
+                    <strong>Hours per Week:</strong> Outliers reflect workers with irregular hours, such as seasonal or self-employed individuals.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

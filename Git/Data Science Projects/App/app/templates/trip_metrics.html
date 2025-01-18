@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Metrics Comparison</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Model Metrics Comparison</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='trip_metrics.png') }}" alt="Model Metrics">
+        <div class="summary">
+            <h2>Classification Report for Logistic Regression</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       1.00      1.00      1.00        43
+                1       1.00      1.00      1.00        80
+     
+         accuracy                           1.00       123
+        macro avg       1.00      1.00      1.00       123
+     weighted avg       1.00      1.00      1.00       123
+            </pre>
+
+            <h2>Classification Report for Decision Tree</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       0.90      0.90      0.90        43
+                1       0.90      0.90      0.90        80
+     
+         accuracy                           0.90       123
+        macro avg       0.90      0.90      0.90       123
+     weighted avg       0.90      0.90      0.90       123
+            </pre>
+
+            <h2>Classification Report for Random Forest</h2>
+            <pre>
+                precision    recall  f1-score   support
+
+                0       1.00      1.00      1.00        43
+                1       1.00      1.00      1.00        80
+     
+         accuracy                           1.00       123
+        macro avg       1.00      1.00      1.00       123
+     weighted avg       1.00      1.00      1.00       123
+            </pre>
+
+            <h2>Explanation</h2>
+            <p>The dataset involves a binary classification task where we aim to predict outcomes (for example, loan approvals or denials). Based on the metrics provided:</p>
+            <ul>
+                <li><strong>Logistic Regression:</strong> The model performs flawlessly, achieving perfect precision, recall, and F1 scores for both classes, resulting in an overall accuracy of 100%. The model seems to have learned the relationship in the data very well.</li>
+                <li><strong>Decision Tree:</strong> This model also performs exceptionally, with a high accuracy of 90%. The precision, recall, and F1 scores for both classes are equally well-balanced at 0.90, indicating that it reliably predicts both outcomes.</li>
+                <li><strong>Random Forest:</strong> Similar to Logistic Regression, Random Forest achieves perfect performance across all metrics. The accuracy and other evaluation metrics are all 1.00, making this model highly reliable for this task.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Based on the metrics observed:</p>
+            <ul>
+                <li><strong>Logistic Regression:</strong> The model achieves perfect metrics and is performing optimally. It is highly suitable for this dataset, making it the most accurate and reliable model in this comparison.</li>
+                <li><strong>Decision Tree:</strong> Although its performance is not quite as flawless as the Logistic Regression and Random Forest models, it still offers a solid performance with an accuracy of 90%. It balances the trade-off between simplicity and performance effectively.</li>
+                <li><strong>Random Forest:</strong> This model also achieves perfect metrics, and its ensemble learning approach ensures high reliability. It matches the Logistic Regression model's performance, making it a great option as well.</li>
+            </ul>
+            <p><strong>Recommendation:</strong> Both Logistic Regression and Random Forest are excellent choices for this dataset, achieving perfect performance across all metrics. If you're looking for a model with simple interpretation and perfect accuracy, Logistic Regression is the preferred choice. However, Random Forest can provide added robustness through ensemble learning.</p>
+        </div>
+    </div>
+</body>
+</html>

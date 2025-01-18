@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Level</title>
+    <style>
+        body {
+            background-color: #d9ffcc;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #555;
+        }
+        .search-bar {
+            margin: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-btn {
+            background-color: #4CAF50;
+            padding: 15px 30px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+        .card {
+            width: 250px;
+            height: 150px;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card:nth-child(1) { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+        .card:nth-child(2) { background: linear-gradient(135deg, #ff9966, #ff5e62); }
+        .card:nth-child(3) { background: linear-gradient(135deg, #36d1dc, #5b86e5); }
+        .card:nth-child(4) { background: linear-gradient(135deg, #c33764, #1d2671); }
+        .card:nth-child(5) { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .card:nth-child(6) { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
+        .card:nth-child(7) { background: linear-gradient(135deg, #e14fad, #f9d423); }
+        .card:nth-child(8) { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+    </style>
+</head>
+<body>
+    <h1>Advanced-Level Machine Learning Projects</h1>
+    
+    <!-- Search Bar -->
+    <input type="text" id="search-bar" class="search-bar" placeholder="Search for a project..." onkeyup="filterProjects()">
+    
+    <div class="container" id="projects-container">
+        <a href="/digits" class="card" onclick="setModel('Identify your Digits Dataset')">17. Identify your Digits Dataset</a>
+        <a href="/urban" class="card" onclick="setModel('Urban Sound Classification')">18. Urban Sound Classification</a>
+        <a href="/market" class="card" onclick="setModel('Market Basket Analysis')">19. Market Basket Analysis</a>
+        <a href="/imagenet" class="card" onclick="setModel('ImageNet Dataset')">20. ImageNet Dataset</a>
+        <a href="/chicago" class="card" onclick="setModel('Chicago Crime Dataset')">21. Chicago Crime Dataset</a>
+        <a href="/covid" class="card" onclick="setModel('Covid-19 Prediction Dataset')">22. Covid-19 Prediction Dataset</a>
+        <a href="/recommendation" class="card" onclick="setModel('Recommendation Engine Dataset')">23. Recommendation Engine Dataset</a>
+        <a href="/license" class="card" onclick="setModel('License Number Plate Recognition System')">24. License Number Plate Recognition System</a>
+    </div>
+
+    <script>
+        // Store the model name in localStorage when clicked
+        function setModel(model) {
+            localStorage.setItem('lastVisitedModel', model);
+            localStorage.setItem('difficulty', 'Advanced');
+        }
+
+        // Filter projects based on search input
+        function filterProjects() {
+            var input = document.getElementById("search-bar").value.toLowerCase();
+            var cards = document.querySelectorAll(".card");
+            cards.forEach(function(card) {
+                var text = card.textContent || card.innerText;
+                if (text.toLowerCase().includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+    <div class="center-button-container">
+        <button class="back-btn" onclick="window.location.href='/'">Back to Home</button>
+    </div>
+</body>
+</html>

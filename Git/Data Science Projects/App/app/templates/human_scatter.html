@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Activity Recognition Scatter Plots</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        table.summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table.summary-table th, table.summary-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table.summary-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Human Activity Recognition Scatter Plots</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            {% for filename in os.listdir('static') %}
+                {% if filename.startswith('human_scatter') %}
+                    <img src="{{ url_for('static', filename=filename) }}" alt="{{ filename }}">
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis Summary</h2>
+            <p>
+                This analysis focuses on the **Human Activity Recognition (HAR)** dataset, which consists of time-series 
+                data collected from accelerometers and gyroscopes. Scatter plots visualize the relationships between key 
+                features, helping to detect trends, anomalies, and outliers. These visualizations aid in understanding 
+                the distinct patterns across activities and sensors.
+            </p>
+            
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                        <th>Key Observations</th>
+                        <th>Outliers (Count)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>tBodyAcc-mean()-X</td>
+                        <td>
+                            Average body acceleration along the X-axis. Derived from smartphone accelerometer data.
+                        </td>
+                        <td>
+                            Values near zero for stationary activities. Outliers observed for dynamic activities.
+                        </td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>tBodyGyro-std()-Z</td>
+                        <td>
+                            Standard deviation of gyroscopic signals along the Z-axis. Reflects rotation variability.
+                        </td>
+                        <td>
+                            High variability during activities like walking upstairs. Minimal variation in stationary states.
+                        </td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Outlier Details</h3>
+            <p>Notable observations based on the scatter plots:</p>
+            
+            <ul>
+                <li>
+                    <strong>tBodyAcc-mean()-X:</strong> Outliers include extremely high or low values during dynamic 
+                    activities, likely caused by rapid directional changes or sensor noise.
+                </li>
+                <li>
+                    <strong>tBodyGyro-std()-Z:</strong> Outliers appear during activities with frequent rotational 
+                    movements, such as walking or jogging, indicating significant signal variance.
+                </li>
+                <li>
+                    <strong>Feature Correlations:</strong> Strong correlations between certain features (e.g., 
+                    accelerometer and gyroscope signals) are visible. Deviations may represent anomalies or unique cases.
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

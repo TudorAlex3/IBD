@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigMart Sales Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>BigMart Sales Dataset Description</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='bigmart_histograms.png') }}" alt="Histograms of BigMart Sales Dataset">
+        <div class="summary">
+            <h2>Dataset Information</h2>
+            <p>The BigMart Sales dataset contains 8523 rows and 12 columns, representing sales data for various items across different outlets.</p>
+
+            <h2>Data Description</h2>
+            <pre>
+                Item_Weight  Item_Visibility     Item_MRP  Outlet_Establishment_Year  Item_Outlet_Sales
+count  7060.000000      8523.000000  8523.000000                8523.000000        8523.000000
+mean     12.857645         0.066132   140.992782                1997.831867        2181.288914
+std       4.643456         0.051598    62.275067                   8.371760        1706.499616
+min       4.555000         0.000000    31.290000                1985.000000          33.290000
+25%       8.773750         0.026989    93.826500                1987.000000         834.247400
+50%      12.600000         0.053931   143.012800                1999.000000        1794.331000
+75%      16.850000         0.094585   185.643700                2004.000000        3101.296400
+max      21.350000         0.328391   266.888400                2009.000000       13086.964800
+            </pre>
+
+            <h2>Column Details</h2>
+            <ul>
+                <li><strong>Item_Identifier:</strong> Unique ID of each product (Categorical, 1559 unique values).</li>
+                <li><strong>Item_Weight:</strong> Weight of the product (Numerical, 415 unique values).</li>
+                <li><strong>Item_Fat_Content:</strong> Fat content level of the product (Categorical, 5 unique values).</li>
+                <li><strong>Item_Visibility:</strong> Visibility of the product in the store (Numerical, 7880 unique values).</li>
+                <li><strong>Item_Type:</strong> Type of product (Categorical, 16 unique values).</li>
+                <li><strong>Item_MRP:</strong> Maximum Retail Price of the product (Numerical, 5938 unique values).</li>
+                <li><strong>Outlet_Identifier:</strong> Unique ID of the outlet (Categorical, 10 unique values).</li>
+                <li><strong>Outlet_Establishment_Year:</strong> Year the outlet was established (Numerical, 9 unique values).</li>
+                <li><strong>Outlet_Size:</strong> Size of the outlet (Categorical, 3 unique values).</li>
+                <li><strong>Outlet_Location_Type:</strong> Location type of the outlet (Categorical, 3 unique values).</li>
+                <li><strong>Outlet_Type:</strong> Type of outlet (Categorical, 4 unique values).</li>
+                <li><strong>Item_Outlet_Sales:</strong> Sales of the product in the outlet (Numerical, 3493 unique values).</li>
+            </ul>
+
+            <h2>Handling Missing Values</h2>
+            <p>Number of missing values in each column before filling:</p>
+            <pre>
+Item_Weight                  1463
+Outlet_Size                  2410
+            </pre>
+            <p>Missing values were filled as follows:</p>
+            <ul>
+                <li><strong>Item_Weight:</strong> 12.857645 (Mean value)</li>
+                <li><strong>Outlet_Size:</strong> Medium (Mode value)</li>
+            </ul>
+
+            <h2>Key Insights</h2>
+            <p>The dataset provides detailed sales data that can be analyzed for:</p>
+            <ul>
+                <li>Trends in product sales across different outlets.</li>
+                <li>Impact of outlet size, location, and type on sales.</li>
+                <li>Relationships between product visibility, MRP, and sales performance.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

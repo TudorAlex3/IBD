@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Your Digits Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Identify Your Digits Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='digits.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Identify Your Digits dataset consists of grayscale images of handwritten digits (0-9), represented as 28x28 pixel arrays. Each image is unwrapped into a single row with 784 pixel values ranging from 0 to 255.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+pixel0, pixel1, ..., pixel783, label
+0, 0, ..., 0, 5
+0, 0, ..., 0, 0
+0, 0, ..., 0, 4
+0, 0, ..., 0, 1
+0, 0, ..., 0, 9
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                <li><strong>pixel0, pixel1, ..., pixel783:</strong> Pixel intensity values for the 28x28 grid of the digit image, unwrapped into a single row.</li>
+                <li><strong>label:</strong> The digit (0-9) represented by the image.</li>
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>This dataset is often used for machine learning classification tasks, where the goal is to predict the digit based on the pixel intensity values. It is derived from the popular MNIST dataset.</p>
+
+            <h2>Usage</h2>
+            <p>The dataset can be split into training and testing subsets for model evaluation. Preprocessing steps such as scaling pixel values to [0,1] or reshaping to 28x28 matrices may be necessary.</p>
+        </div>
+    </div>
+</body>
+</html>

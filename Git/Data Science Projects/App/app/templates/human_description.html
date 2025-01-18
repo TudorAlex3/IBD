@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Activity Recognition Dataset Description</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .button-container {
+            margin: 20px 0;
+        }
+        .download-button {
+            background-color: #003366; /* Marine Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-button:hover {
+            background-color: #002244; /* Darker Blue for hover effect */
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Human Activity Recognition Dataset Description</h1>
+
+    <div class="button-container">
+        <a href="{{ url_for('static', filename='Human_activity.csv') }}" class="download-button" download>
+            Download Dataset
+        </a>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <h2>Dataset Overview</h2>
+            <p>The Human Activity Recognition (HAR) dataset includes time-series data collected from accelerometers and gyroscopes embedded in smartphones. It contains features derived from body acceleration, gravity acceleration, and jerk signals for six human activities.</p>
+
+            <h2>Data Head (First 5 Entries)</h2>
+            <pre>
+tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tBodyAcc-mean()-Z, ..., tBodyGyroMag-std(), activity, subject_id
+0.28858451, -0.020294171, -0.13290514, ..., 0.1799406, WALKING, 1
+0.27841883, -0.016410568, -0.12352019, ..., 0.18028889, WALKING, 1
+0.27965306, -0.019467156, -0.11346169, ..., 0.1797406, WALKING_UPSTAIRS, 2
+...
+            </pre>
+
+            <h2>Columns</h2>
+            <ul>
+                {% for column in description.columns %}
+                    <li>{{ column }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Explanation</h2>
+            <p>The dataset consists of 561 features extracted from raw signals. Key columns include:</p>
+            <ul>
+                <li><strong>tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tBodyAcc-mean()-Z</strong>: Mean values of body acceleration signals along X, Y, and Z axes.</li>
+                <li><strong>tBodyAcc-std()-X, tBodyAcc-std()-Y, tBodyAcc-std()-Z</strong>: Standard deviation of body acceleration signals along X, Y, and Z axes.</li>
+                <li><strong>tBodyGyro-mean()-X, tBodyGyro-mean()-Y, tBodyGyro-mean()-Z</strong>: Mean values of gyroscope signals along X, Y, and Z axes.</li>
+                <li><strong>tBodyAccMag-std()</strong>: Standard deviation of the magnitude of body acceleration signals.</li>
+                <li><strong>activity</strong>: The activity being performed (e.g., Walking, Sitting).</li>
+                <li><strong>subject_id</strong>: Identifier for the individual performing the activity.</li>
+            </ul>
+
+            <h2>Activities Included</h2>
+            <ul>
+                <li>WALKING</li>
+                <li>WALKING_UPSTAIRS</li>
+                <li>WALKING_DOWNSTAIRS</li>
+                <li>SITTING</li>
+                <li>STANDING</li>
+                <li>LAYING</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Black Friday Dataset: Post-Outlier Removal</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <img src="{{ url_for('static', filename='black_removed_outliers_id.png') }}" alt="Dataset Columns Count">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Data Analysis After Removing Outliers</h2>
+            <p>
+                The removal of outliers from the dataset has led to a more refined view of the data, making the analysis more representative of typical trends. By eliminating extreme values that could distort analysis, we now have a more accurate representation of patterns and relationships in the data. The clean dataset provides more reliable insights, particularly for time series forecasting and trend analysis.
+            </p>
+            
+            <h3>Key Insights After Outlier Removal</h3>
+            <ul>
+                <li>
+                    <strong>Sales Data Analysis:</strong> 
+                    After removing the outliers, the sales data exhibits a more consistent distribution. Extreme values, which might have been driven by rare events or data errors, no longer skew the overall analysis. This leads to a better understanding of average sales performance and more accurate trend forecasting.
+                </li>
+                <li>
+                    <strong>Customer Behavior:</strong> 
+                    With the outliers removed, the dataset now presents a more typical customer behavior pattern. Previously unusual purchasing trends that may have been due to outliers or erroneous data are no longer present, making it easier to identify patterns of regular customer activity.
+                </li>
+                <li>
+                    <strong>Product Trends:</strong> 
+                    Product sales patterns are clearer without the distortion caused by outliers. The cleaned data highlights which products are consistently performing well, allowing for better product demand forecasting and inventory management.
+                </li>
+            </ul>
+        
+            <h3>Improved Data Quality</h3>
+            <ul>
+                <li>
+                    <strong>Data Consistency:</strong> 
+                    By removing outliers, the dataset has become more consistent. This improvement makes it easier to identify correlations between different variables, as the influence of extreme values is reduced.
+                </li>
+                <li>
+                    <strong>Forecasting Precision:</strong> 
+                    The time series data is now more reliable for forecasting. Without outliers causing irregularities, predictions based on historical patterns are expected to be more accurate, providing stronger insights into future trends.
+                </li>
+            </ul>
+        
+            <p>
+                The removal of outliers has greatly enhanced the integrity and accuracy of the dataset. It has facilitated better trend analysis, forecasting, and overall understanding of both customer behavior and product performance, providing a stronger foundation for future predictive models.
+            </p>
+        </div>
+        
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </div>
+</body>
+</html>

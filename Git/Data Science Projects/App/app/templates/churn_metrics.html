@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics Explanation - Churn Dataset</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin: 20px;
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metrics Explanation - Churn Dataset</h1>
+    <div class="content">
+        <img src="{{ url_for('static', filename='chrun_metrics.png') }}" alt="Performance Metrics for Churn Dataset">
+
+        <div class="summary">
+            <h2>Key Metrics</h2>
+            <p>The following metrics are crucial for understanding the dynamics of customer churn in the dataset:</p>
+            <ul>
+                <li>
+                    <strong>Churn:</strong>
+                    Indicates whether a customer has left the service (Yes/No). This is the target variable and helps predict customer retention.
+                </li>
+                <li>
+                    <strong>Dependents:</strong>
+                    Denotes if the customer has dependents (Yes/No). This influences churn patterns as family obligations may affect service usage.
+                </li>
+                <li>
+                    <strong>Gender:</strong>
+                    Provides demographic insights. While gender itself may not always directly affect churn, patterns can emerge when combined with other factors.
+                </li>
+                <li>
+                    <strong>Partner:</strong>
+                    Indicates if the customer has a partner (Yes/No). Customers with partners may show higher retention due to shared service usage.
+                </li>
+                <li>
+                    <strong>PhoneService:</strong>
+                    Shows if the customer subscribes to a phone service (Yes/No). This directly impacts their likelihood of staying with or leaving the service.
+                </li>
+            </ul>
+
+            <h2>Analysis Summary</h2>
+            <p>By analyzing these metrics, we gain valuable insights into factors influencing customer behavior. Outlier detection and removal can help refine predictive models for better accuracy and reliability.</p>
+        </div>
+    </div>
+</body>
+</html>

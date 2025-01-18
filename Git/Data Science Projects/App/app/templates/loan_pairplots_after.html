@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Pairplots After Removing Outliers</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #555;
+        }
+        .content {
+            padding: 20px;
+        }
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .grid-container img {
+            max-width: 45%; /* Adjust width for two images per row */
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .summary {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .summary p, .summary pre, .summary ul {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loan Dataset Scatter Plots with Outliers</h1>
+    <div class="content">
+        <!-- Grid container for images -->
+        <div class="grid-container">
+            <!-- Scatter plot for ApplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_removed_outliers_application.png') }}" alt="Application Outliers Removed">
+            <!-- Scatter plot for CoapplicantIncome -->
+            <img src="{{ url_for('static', filename='loan_removed_outliers_coapplicant.png') }}" alt="Coapplicant Outliers Removed">
+            <!-- Scatter plot for LoanAmount -->
+            <img src="{{ url_for('static', filename='loan_removed_outliers_dependents.png') }}" alt="Loan Dependents Outliers Removed">
+            <!-- Scatter plot for LoanAmountTerm -->
+            <img src="{{ url_for('static', filename='loan_removed_outliers_education.png') }}" alt="Loan Education Outliers Removed">
+            <!-- Additional scatter plot -->
+            <img src="{{ url_for('static', filename='loan_removed_outliers_gender.png') }}" alt="Loan Gender Outliers Removed">
+            <img src="{{ url_for('static', filename='loan_removed_outliers_married.png') }}" alt="Loan Married Outliers Removed">
+            <img src="{{ url_for('static', filename='loan_removed_outliers_self_employed.png') }}" alt="Loan Self Employed Outliers Removed">
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <h2>Post-Outlier Removal Analysis</h2>
+            <p>
+                After identifying and removing the outliers from the dataset, the remaining data presents a much clearer picture of the underlying trends. Outliers can sometimes skew the interpretation of visualizations, but with them removed, the relationships between variables become more apparent, enabling more accurate insights and predictions.
+            </p>
+        
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Pre-Outlier Analysis</th>
+                        <th>Post-Outlier Analysis</th>
+                        <th>Key Insights</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Applicant Income</td>
+                        <td>
+                            Prior to removing outliers, the scatter plot showed significant spread with high-value data points influencing the average. This made it hard to see any clear patterns.
+                        </td>
+                        <td>
+                            After removing outliers, the plot demonstrates a more consistent range of applicant incomes, showing a more defined distribution and highlighting the typical income range for loan applicants.
+                        </td>
+                        <td>Applicant income is more centered around the middle-income range with fewer extreme values.</td>
+                    </tr>
+                    <tr>
+                        <td>Coapplicant Income</td>
+                        <td>
+                            The data had many low or zero values for coapplicant income, making the scatter plot less meaningful and distorting any potential relationships with loan approval.
+                        </td>
+                        <td>
+                            After cleaning the data, the coapplicant income distribution becomes more centered, revealing a clearer correlation with applicant income and loan approval.
+                        </td>
+                        <td>The coapplicant income now appears to play a more meaningful role in loan approval when cleaned.</td>
+                    </tr>
+                    <tr>
+                        <td>Loan Amount</td>
+                        <td>
+                            Outliers skewed the loan amount distribution, with a few extremely high loan requests overwhelming the lower range. This made it difficult to observe the typical loan request behavior.
+                        </td>
+                        <td>
+                            Post-cleaning, the loan amount distribution appears more normally distributed, showing a typical range for most applicants, with less variation due to extreme values.
+                        </td>
+                        <td>The loan amount data now reflects more realistic values and shows a clearer distribution.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h3>Graphics and Insights</h3>
+            <p>Below are the graphics after the removal of outliers:</p>
+            <ul>
+                <li>
+                    <strong>Applicant Income vs Loan Amount:</strong> The scatter plot shows a more balanced relationship between applicant income and loan amount. Without the influence of outliers, the general trend of higher-income applicants requesting higher loan amounts is clearer.
+                </li>
+                <li>
+                    <strong>Coapplicant Income vs Loan Amount:</strong> The cleaned plot reveals that applicants with higher coapplicant incomes tend to request larger loan amounts, though the trend is not as strong as with applicant income alone.
+                </li>
+                <li>
+                    <strong>Loan Amount Distribution:</strong> A histogram of loan amounts now shows a more normal distribution, with fewer extreme values, making it easier to observe the typical loan amounts requested.
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            .summary {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+        
+            .summary h2 {
+                color: #4CAF50;
+                margin-bottom: 15px;
+            }
+        
+            .summary-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+        
+            .summary-table th,
+            .summary-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+        
+            .summary-table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        
+            .summary ul {
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+        
+            .summary ul li {
+                margin-bottom: 10px;
+            }
+        
+            .summary code {
+                background-color: #f4f4f4;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+        </style>
+            
+    </div>
+</body>
+</html>
